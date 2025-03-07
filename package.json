@@ -1,0 +1,6 @@
+{
+  "type" : "module",
+  "dependencies": {
+    "google-maps-review-scraper": "^1.4.0"
+  }
+}
