@@ -1,0 +1,3156 @@
+[
+    {
+        "name": "Burgos",
+        "coordinates": [
+            -3.696977,
+            42.343926
+        ],
+        "population": 175895.0
+    },
+    {
+        "name": "Miranda de Ebro",
+        "coordinates": [
+            -2.9478451,
+            42.6855632
+        ],
+        "population": 36018.0
+    },
+    {
+        "name": "Aranda de Duero",
+        "coordinates": [
+            -3.6851172,
+            41.6715067
+        ],
+        "population": 33757.0
+    },
+    {
+        "name": "Briviesca",
+        "coordinates": [
+            -3.3218059,
+            42.549796
+        ],
+        "population": 6560.0
+    },
+    {
+        "name": "Medina de Pomar",
+        "coordinates": [
+            -3.4861165,
+            42.9322092
+        ],
+        "population": 5997.0
+    },
+    {
+        "name": "Villarcayo",
+        "coordinates": [
+            -3.5719766,
+            42.9389527
+        ],
+        "population": 4047.0
+    },
+    {
+        "name": "Lerma",
+        "coordinates": [
+            -3.7559335,
+            42.0262334
+        ],
+        "population": 2556.0
+    },
+    {
+        "name": "Roa",
+        "coordinates": [
+            -3.9284274,
+            41.6966212
+        ],
+        "population": 2244.0
+    },
+    {
+        "name": "Quintanadueñas",
+        "coordinates": [
+            -3.7342267,
+            42.3848677
+        ],
+        "population": 2133.0
+    },
+    {
+        "name": "Huerta de Abajo",
+        "coordinates": [
+            -3.1472809,
+            42.1141948
+        ],
+        "population": 2133.0
+    },
+    {
+        "name": "Salas de los Infantes",
+        "coordinates": [
+            -3.2880776,
+            42.0220376
+        ],
+        "population": 1984.0
+    },
+    {
+        "name": "Lara de los Infantes",
+        "coordinates": [
+            -3.445306,
+            42.1230839
+        ],
+        "population": 1984.0
+    },
+    {
+        "name": "Villagonzalo Pedernales",
+        "coordinates": [
+            -3.733804,
+            42.3017566
+        ],
+        "population": 1882.0
+    },
+    {
+        "name": "Arcos de la Llana",
+        "coordinates": [
+            -3.7555708,
+            42.2652637
+        ],
+        "population": 1835.0
+    },
+    {
+        "name": "Belorado",
+        "coordinates": [
+            -3.1917821,
+            42.4197032
+        ],
+        "population": 1834.0
+    },
+    {
+        "name": "Espinosa de los Monteros",
+        "coordinates": [
+            -3.5534546,
+            43.0789612
+        ],
+        "population": 1648.0
+    },
+    {
+        "name": "Villalbilla de Burgos",
+        "coordinates": [
+            -3.7796129,
+            42.3470908
+        ],
+        "population": 1514.0
+    },
+    {
+        "name": "Quintanar de la Sierra",
+        "coordinates": [
+            -3.0413087,
+            41.9816833
+        ],
+        "population": 1513.0
+    },
+    {
+        "name": "Melgar de Fernamental",
+        "coordinates": [
+            -4.2469137,
+            42.4036374
+        ],
+        "population": 1513.0
+    },
+    {
+        "name": "Treviño",
+        "coordinates": [
+            -2.7469278,
+            42.7347155
+        ],
+        "population": 1489.0
+    },
+    {
+        "name": "Villadiego",
+        "coordinates": [
+            -4.0107323,
+            42.5147918
+        ],
+        "population": 1455.0
+    },
+    {
+        "name": "Ibeas de Juarros",
+        "coordinates": [
+            -3.5358434,
+            42.3316845
+        ],
+        "population": 1445.0
+    },
+    {
+        "name": "Cardeñadijo",
+        "coordinates": [
+            -3.667743,
+            42.3007027
+        ],
+        "population": 1430.0
+    },
+    {
+        "name": "Río Quintanilla",
+        "coordinates": [
+            -3.5084127,
+            42.7311559
+        ],
+        "population": 1411.0
+    },
+    {
+        "name": "Cardeñajimeno",
+        "coordinates": [
+            -3.6208379,
+            42.3303559
+        ],
+        "population": 1169.0
+    },
+    {
+        "name": "Pradoluengo",
+        "coordinates": [
+            -3.2011736,
+            42.3240754
+        ],
+        "population": 1070.0
+    },
+    {
+        "name": "Oña",
+        "coordinates": [
+            -3.413458,
+            42.7343909
+        ],
+        "population": 951.0
+    },
+    {
+        "name": "Sasamón",
+        "coordinates": [
+            -4.0432798,
+            42.4179379
+        ],
+        "population": 912.0
+    },
+    {
+        "name": "Quintanilla Vivar",
+        "coordinates": [
+            -3.6886408,
+            42.414355
+        ],
+        "population": 885.0
+    },
+    {
+        "name": "Huerta de Rey",
+        "coordinates": [
+            -3.3480473,
+            41.8401218
+        ],
+        "population": 881.0
+    },
+    {
+        "name": "Tardajos",
+        "coordinates": [
+            -3.8186139,
+            42.3488737
+        ],
+        "population": 864.0
+    },
+    {
+        "name": "Castrillo del Val",
+        "coordinates": [
+            -3.5846841,
+            42.3140713
+        ],
+        "population": 823.0
+    },
+    {
+        "name": "Fuentespina",
+        "coordinates": [
+            -3.6853483,
+            41.6323892
+        ],
+        "population": 816.0
+    },
+    {
+        "name": "Castrojeriz",
+        "coordinates": [
+            -4.1406403,
+            42.2883697
+        ],
+        "population": 778.0
+    },
+    {
+        "name": "Modúbar de la Emparedada",
+        "coordinates": [
+            -3.6593957,
+            42.2599799
+        ],
+        "population": 769.0
+    },
+    {
+        "name": "Villariezo",
+        "coordinates": [
+            -3.7329673,
+            42.269929
+        ],
+        "population": 719.0
+    },
+    {
+        "name": "Villacienzo",
+        "coordinates": [
+            -3.7574133,
+            42.3276573
+        ],
+        "population": 719.0
+    },
+    {
+        "name": "Trespaderne",
+        "coordinates": [
+            -3.3905472,
+            42.8025289
+        ],
+        "population": 713.0
+    },
+    {
+        "name": "Villalba de Duero",
+        "coordinates": [
+            -3.7437137,
+            41.6825764
+        ],
+        "population": 706.0
+    },
+    {
+        "name": "Fresnillo de las Dueñas",
+        "coordinates": [
+            -3.6457363,
+            41.647788
+        ],
+        "population": 693.0
+    },
+    {
+        "name": "Cogollos",
+        "coordinates": [
+            -3.6985858,
+            42.2015894
+        ],
+        "population": 677.0
+    },
+    {
+        "name": "Palacios de la Sierra",
+        "coordinates": [
+            -3.1282384,
+            41.9639356
+        ],
+        "population": 675.0
+    },
+    {
+        "name": "Estépar",
+        "coordinates": [
+            -3.8981555,
+            42.2768521
+        ],
+        "population": 634.0
+    },
+    {
+        "name": "Revillarruz",
+        "coordinates": [
+            -3.6527718,
+            42.2304991
+        ],
+        "population": 634.0
+    },
+    {
+        "name": "Castrillo de la Vega",
+        "coordinates": [
+            -3.7806462,
+            41.6519593
+        ],
+        "population": 621.0
+    },
+    {
+        "name": "Buniel",
+        "coordinates": [
+            -3.8225965,
+            42.3107862
+        ],
+        "population": 612.0
+    },
+    {
+        "name": "Hontoria del Pinar",
+        "coordinates": [
+            -3.1629214,
+            41.8484523
+        ],
+        "population": 610.0
+    },
+    {
+        "name": "Gumiel de Izán",
+        "coordinates": [
+            -3.6878244,
+            41.772825
+        ],
+        "population": 584.0
+    },
+    {
+        "name": "Torresandino",
+        "coordinates": [
+            -3.9100954,
+            41.829831
+        ],
+        "population": 574.0
+    },
+    {
+        "name": "La Puebla de Arganzón",
+        "coordinates": [
+            -2.8309644,
+            42.7666976
+        ],
+        "population": 557.0
+    },
+    {
+        "name": "Santa María del Campo",
+        "coordinates": [
+            -3.9754561,
+            42.1319646
+        ],
+        "population": 523.0
+    },
+    {
+        "name": "Covarrubias",
+        "coordinates": [
+            -3.5201803,
+            42.0592944
+        ],
+        "population": 505.0
+    },
+    {
+        "name": "Vilviestre del Pinar",
+        "coordinates": [
+            -3.0781122,
+            41.9520417
+        ],
+        "population": 504.0
+    },
+    {
+        "name": "Cerezo de Río Tirón",
+        "coordinates": [
+            -3.1356369,
+            42.4919916
+        ],
+        "population": 490.0
+    },
+    {
+        "name": "Carcedo de Burgos",
+        "coordinates": [
+            -3.6219998,
+            42.2870348
+        ],
+        "population": 484.0
+    },
+    {
+        "name": "Sotillo de la Ribera",
+        "coordinates": [
+            -3.8257716,
+            41.7780479
+        ],
+        "population": 470.0
+    },
+    {
+        "name": "Peñaranda de Duero",
+        "coordinates": [
+            -3.4799443,
+            41.6882886
+        ],
+        "population": 465.0
+    },
+    {
+        "name": "Pedrosa de Duero",
+        "coordinates": [
+            -3.9869811,
+            41.7123411
+        ],
+        "population": 460.0
+    },
+    {
+        "name": "Pancorbo",
+        "coordinates": [
+            -3.1109887,
+            42.6353553
+        ],
+        "population": 437.0
+    },
+    {
+        "name": "Canicosa de la Sierra",
+        "coordinates": [
+            -3.0413238,
+            41.9370583
+        ],
+        "population": 424.0
+    },
+    {
+        "name": "Arlanzón",
+        "coordinates": [
+            -3.459265,
+            42.322506
+        ],
+        "population": 424.0
+    },
+    {
+        "name": "Sotresgudo",
+        "coordinates": [
+            -4.1770058,
+            42.5788583
+        ],
+        "population": 420.0
+    },
+    {
+        "name": "Milagros",
+        "coordinates": [
+            -3.6980329,
+            41.5752405
+        ],
+        "population": 415.0
+    },
+    {
+        "name": "Villalmanzo",
+        "coordinates": [
+            -3.7420888,
+            42.0481459
+        ],
+        "population": 410.0
+    },
+    {
+        "name": "Sedano",
+        "coordinates": [
+            -3.7496055,
+            42.7165302
+        ],
+        "population": 409.0
+    },
+    {
+        "name": "Caleruega",
+        "coordinates": [
+            -3.4870326,
+            41.8252955
+        ],
+        "population": 400.0
+    },
+    {
+        "name": "Las Quintanillas",
+        "coordinates": [
+            -3.8437002,
+            42.3723251
+        ],
+        "population": 388.0
+    },
+    {
+        "name": "Tórtoles de Esgueva",
+        "coordinates": [
+            -4.0221585,
+            41.8164517
+        ],
+        "population": 387.0
+    },
+    {
+        "name": "Gumiel de Mercado",
+        "coordinates": [
+            -3.8023633,
+            41.7569677
+        ],
+        "population": 380.0
+    },
+    {
+        "name": "Valdorros",
+        "coordinates": [
+            -3.7092235,
+            42.1721238
+        ],
+        "population": 375.0
+    },
+    {
+        "name": "Vadocondes",
+        "coordinates": [
+            -3.5719867,
+            41.639997
+        ],
+        "population": 364.0
+    },
+    {
+        "name": "Orbaneja Riopico",
+        "coordinates": [
+            -3.5849447,
+            42.3600672
+        ],
+        "population": 350.0
+    },
+    {
+        "name": "Quintanilla del Agua",
+        "coordinates": [
+            -3.6526939,
+            42.0336734
+        ],
+        "population": 335.0
+    },
+    {
+        "name": "Baños de Valdearados",
+        "coordinates": [
+            -3.5559268,
+            41.7700928
+        ],
+        "population": 318.0
+    },
+    {
+        "name": "San Mamés de Burgos",
+        "coordinates": [
+            -3.7940524,
+            42.3364498
+        ],
+        "population": 310.0
+    },
+    {
+        "name": "La Horra",
+        "coordinates": [
+            -3.8752323,
+            41.7402299
+        ],
+        "population": 303.0
+    },
+    {
+        "name": "Los Balbases",
+        "coordinates": [
+            -4.0633841,
+            42.2147696
+        ],
+        "population": 302.0
+    },
+    {
+        "name": "Sotragero",
+        "coordinates": [
+            -3.7127498,
+            42.4099668
+        ],
+        "population": 301.0
+    },
+    {
+        "name": "Regumiel de la Sierra",
+        "coordinates": [
+            -2.9841395,
+            41.9601019
+        ],
+        "population": 301.0
+    },
+    {
+        "name": "Tordómar",
+        "coordinates": [
+            -3.8653108,
+            42.0460696
+        ],
+        "population": 298.0
+    },
+    {
+        "name": "Basconcillos del Tozo",
+        "coordinates": [
+            -3.9893958,
+            42.7028611
+        ],
+        "population": 294.0
+    },
+    {
+        "name": "Pampliega",
+        "coordinates": [
+            -3.9871757,
+            42.2061659
+        ],
+        "population": 291.0
+    },
+    {
+        "name": "Villahoz",
+        "coordinates": [
+            -3.9126109,
+            42.0773181
+        ],
+        "population": 287.0
+    },
+    {
+        "name": "Isar",
+        "coordinates": [
+            -3.9304431,
+            42.3615993
+        ],
+        "population": 284.0
+    },
+    {
+        "name": "Quintanaortuño",
+        "coordinates": [
+            -3.6834145,
+            42.4501431
+        ],
+        "population": 284.0
+    },
+    {
+        "name": "Poza de la Sal",
+        "coordinates": [
+            -3.5018934,
+            42.6669682
+        ],
+        "population": 283.0
+    },
+    {
+        "name": "Villanueva de Gumiel",
+        "coordinates": [
+            -3.6267453,
+            41.7377866
+        ],
+        "population": 279.0
+    },
+    {
+        "name": "Araúzo de Miel",
+        "coordinates": [
+            -3.3880076,
+            41.8595865
+        ],
+        "population": 274.0
+    },
+    {
+        "name": "Villasur de Herreros",
+        "coordinates": [
+            -3.3938217,
+            42.3082255
+        ],
+        "population": 273.0
+    },
+    {
+        "name": "Fuentelcésped",
+        "coordinates": [
+            -3.6401714,
+            41.5910569
+        ],
+        "population": 273.0
+    },
+    {
+        "name": "Frías",
+        "coordinates": [
+            -3.2939646,
+            42.7617467
+        ],
+        "population": 270.0
+    },
+    {
+        "name": "Sarracín",
+        "coordinates": [
+            -3.6978927,
+            42.259659
+        ],
+        "population": 261.0
+    },
+    {
+        "name": "Rabé de las Calzadas",
+        "coordinates": [
+            -3.8341082,
+            42.3401932
+        ],
+        "population": 250.0
+    },
+    {
+        "name": "Cavia",
+        "coordinates": [
+            -3.8475054,
+            42.2848973
+        ],
+        "population": 248.0
+    },
+    {
+        "name": "Santo Domingo de Silos",
+        "coordinates": [
+            -3.4185675,
+            41.962597
+        ],
+        "population": 247.0
+    },
+    {
+        "name": "Pedrosa de Río Úrbel",
+        "coordinates": [
+            -3.8217817,
+            42.409941
+        ],
+        "population": 243.0
+    },
+    {
+        "name": "Quemada",
+        "coordinates": [
+            -3.5751661,
+            41.7010286
+        ],
+        "population": 238.0
+    },
+    {
+        "name": "Fuentecén",
+        "coordinates": [
+            -3.8678285,
+            41.6284256
+        ],
+        "population": 237.0
+    },
+    {
+        "name": "Villangómez",
+        "coordinates": [
+            -3.7734699,
+            42.180034
+        ],
+        "population": 232.0
+    },
+    {
+        "name": "Rubena",
+        "coordinates": [
+            -3.573971,
+            42.3877898
+        ],
+        "population": 217.0
+    },
+    {
+        "name": "Albillos",
+        "coordinates": [
+            -3.7909197,
+            42.2764472
+        ],
+        "population": 214.0
+    },
+    {
+        "name": "Hoyales de Roa",
+        "coordinates": [
+            -3.8613846,
+            41.6595641
+        ],
+        "population": 212.0
+    },
+    {
+        "name": "Cilleruelo de Abajo",
+        "coordinates": [
+            -3.7963274,
+            41.8841088
+        ],
+        "population": 209.0
+    },
+    {
+        "name": "Zazuar",
+        "coordinates": [
+            -3.5542511,
+            41.6954792
+        ],
+        "population": 209.0
+    },
+    {
+        "name": "Presencio",
+        "coordinates": [
+            -3.9013025,
+            42.1859701
+        ],
+        "population": 207.0
+    },
+    {
+        "name": "Adrada de Haza",
+        "coordinates": [
+            -3.822566,
+            41.5949919
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Quintanas de Valdelucio",
+        "coordinates": [
+            -4.1205087,
+            42.7176067
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Villayerno Morquillas",
+        "coordinates": [
+            -3.6394988,
+            42.3954921
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Pedrosa de Valdeporres",
+        "coordinates": [
+            -3.7408543,
+            43.0090211
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Villanasur Río de Oca",
+        "coordinates": [
+            -3.3207916,
+            42.4365497
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Quecedo de Valdivielso",
+        "coordinates": [
+            -3.5416491,
+            42.8318456
+        ],
+        "population": 205.0
+    },
+    {
+        "name": "Berlangas de Roa",
+        "coordinates": [
+            -3.8735919,
+            41.6892721
+        ],
+        "population": 203.0
+    },
+    {
+        "name": "Saldaña de Burgos",
+        "coordinates": [
+            -3.6851708,
+            42.2577067
+        ],
+        "population": 201.0
+    },
+    {
+        "name": "Nava de Roa",
+        "coordinates": [
+            -3.9630565,
+            41.6120189
+        ],
+        "population": 199.0
+    },
+    {
+        "name": "Cayuela",
+        "coordinates": [
+            -3.8203405,
+            42.2730934
+        ],
+        "population": 189.0
+    },
+    {
+        "name": "Bugedo",
+        "coordinates": [
+            -3.0176193,
+            42.6495414
+        ],
+        "population": 189.0
+    },
+    {
+        "name": "Mecerreyes",
+        "coordinates": [
+            -3.5741907,
+            42.0955345
+        ],
+        "population": 188.0
+    },
+    {
+        "name": "Atapuerca",
+        "coordinates": [
+            -3.5073517,
+            42.3768153
+        ],
+        "population": 180.0
+    },
+    {
+        "name": "Olmedillo de Roa",
+        "coordinates": [
+            -3.9340194,
+            41.7836695
+        ],
+        "population": 179.0
+    },
+    {
+        "name": "Villasandino",
+        "coordinates": [
+            -4.1097601,
+            42.3714082
+        ],
+        "population": 178.0
+    },
+    {
+        "name": "Los Barrios de Bureba",
+        "coordinates": [
+            -3.3908033,
+            42.6460668
+        ],
+        "population": 178.0
+    },
+    {
+        "name": "Madrigalejo del Monte",
+        "coordinates": [
+            -3.7248736,
+            42.1244801
+        ],
+        "population": 176.0
+    },
+    {
+        "name": "Hontoria de la Cantera",
+        "coordinates": [
+            -3.6425771,
+            42.1891184
+        ],
+        "population": 174.0
+    },
+    {
+        "name": "Campillo de Aranda",
+        "coordinates": [
+            -3.7305204,
+            41.6107659
+        ],
+        "population": 171.0
+    },
+    {
+        "name": "Tubilla del Lago",
+        "coordinates": [
+            -3.5866896,
+            41.8017679
+        ],
+        "population": 171.0
+    },
+    {
+        "name": "Peral de Arlanza",
+        "coordinates": [
+            -4.0771698,
+            42.0760549
+        ],
+        "population": 170.0
+    },
+    {
+        "name": "Moradillo de Roa",
+        "coordinates": [
+            -3.7917008,
+            41.5518807
+        ],
+        "population": 170.0
+    },
+    {
+        "name": "Royuela de Río Franco",
+        "coordinates": [
+            -3.9582255,
+            41.9989528
+        ],
+        "population": 170.0
+    },
+    {
+        "name": "Monasterio de Rodilla",
+        "coordinates": [
+            -3.4675464,
+            42.4580177
+        ],
+        "population": 169.0
+    },
+    {
+        "name": "Arenillas de Riopisuerga",
+        "coordinates": [
+            -4.2337768,
+            42.3558474
+        ],
+        "population": 166.0
+    },
+    {
+        "name": "Barrio de Bricia",
+        "coordinates": [
+            -3.8478105,
+            42.9075158
+        ],
+        "population": 166.0
+    },
+    {
+        "name": "Los Ausines",
+        "coordinates": [
+            -3.5909355,
+            42.2261199
+        ],
+        "population": 165.0
+    },
+    {
+        "name": "Hontoria de Valdearados",
+        "coordinates": [
+            -3.5198104,
+            41.7446524
+        ],
+        "population": 164.0
+    },
+    {
+        "name": "Pedrosa del Príncipe",
+        "coordinates": [
+            -4.1992265,
+            42.2496567
+        ],
+        "population": 163.0
+    },
+    {
+        "name": "Pinilla Trasmonte",
+        "coordinates": [
+            -3.619404,
+            41.873491
+        ],
+        "population": 161.0
+    },
+    {
+        "name": "Santa Gadea del Cid",
+        "coordinates": [
+            -3.0590421,
+            42.7150547
+        ],
+        "population": 161.0
+    },
+    {
+        "name": "Villamayor de los Montes",
+        "coordinates": [
+            -3.76587,
+            42.1059603
+        ],
+        "population": 160.0
+    },
+    {
+        "name": "Fresno de Río Tirón",
+        "coordinates": [
+            -3.1740093,
+            42.4595758
+        ],
+        "population": 160.0
+    },
+    {
+        "name": "Castrillo de la Reina",
+        "coordinates": [
+            -3.2363146,
+            41.9864699
+        ],
+        "population": 158.0
+    },
+    {
+        "name": "Anguix",
+        "coordinates": [
+            -3.9324525,
+            41.7536922
+        ],
+        "population": 156.0
+    },
+    {
+        "name": "Santa Inés",
+        "coordinates": [
+            -3.7028525,
+            42.0382705
+        ],
+        "population": 155.0
+    },
+    {
+        "name": "Arandilla",
+        "coordinates": [
+            -3.4297936,
+            41.7376945
+        ],
+        "population": 155.0
+    },
+    {
+        "name": "Huérmeces",
+        "coordinates": [
+            -3.7712031,
+            42.5226323
+        ],
+        "population": 153.0
+    },
+    {
+        "name": "San Juan del Monte",
+        "coordinates": [
+            -3.5220473,
+            41.6834075
+        ],
+        "population": 152.0
+    },
+    {
+        "name": "Quintana del Pidio",
+        "coordinates": [
+            -3.7509232,
+            41.7595385
+        ],
+        "population": 149.0
+    },
+    {
+        "name": "Cabañes de Esgueva",
+        "coordinates": [
+            -3.7853541,
+            41.8307221
+        ],
+        "population": 149.0
+    },
+    {
+        "name": "Montorio",
+        "coordinates": [
+            -3.7767155,
+            42.5852589
+        ],
+        "population": 149.0
+    },
+    {
+        "name": "Hacinas",
+        "coordinates": [
+            -3.2871138,
+            41.9850692
+        ],
+        "population": 149.0
+    },
+    {
+        "name": "Busto de Bureba",
+        "coordinates": [
+            -3.2650205,
+            42.6591582
+        ],
+        "population": 143.0
+    },
+    {
+        "name": "Villafruela",
+        "coordinates": [
+            -3.9122928,
+            41.9175141
+        ],
+        "population": 143.0
+    },
+    {
+        "name": "Madrigal del Monte",
+        "coordinates": [
+            -3.675334,
+            42.1446198
+        ],
+        "population": 143.0
+    },
+    {
+        "name": "Iglesias",
+        "coordinates": [
+            -3.989185,
+            42.2975797
+        ],
+        "population": 141.0
+    },
+    {
+        "name": "San Martín de Rubiales",
+        "coordinates": [
+            -3.99085,
+            41.6413076
+        ],
+        "population": 139.0
+    },
+    {
+        "name": "Villaquirán de los Infantes",
+        "coordinates": [
+            -4.0087348,
+            42.2268384
+        ],
+        "population": 138.0
+    },
+    {
+        "name": "Fuentenebro",
+        "coordinates": [
+            -3.7545241,
+            41.5274546
+        ],
+        "population": 136.0
+    },
+    {
+        "name": "Barbadillo del Mercado",
+        "coordinates": [
+            -3.3582471,
+            42.0388829
+        ],
+        "population": 134.0
+    },
+    {
+        "name": "Santa Cruz de la Salceda",
+        "coordinates": [
+            -3.5944326,
+            41.5948858
+        ],
+        "population": 134.0
+    },
+    {
+        "name": "Vivar del Cid",
+        "coordinates": [
+            -3.6800644,
+            42.4223439
+        ],
+        "population": 134.0
+    },
+    {
+        "name": "Sargentes de la Lora",
+        "coordinates": [
+            -3.8721491,
+            42.7689435
+        ],
+        "population": 133.0
+    },
+    {
+        "name": "Salas de Bureba",
+        "coordinates": [
+            -3.4731994,
+            42.6923
+        ],
+        "population": 129.0
+    },
+    {
+        "name": "Huerta de Arriba",
+        "coordinates": [
+            -3.0820186,
+            42.1166474
+        ],
+        "population": 128.0
+    },
+    {
+        "name": "Tubilla del Agua",
+        "coordinates": [
+            -3.8034079,
+            42.7090683
+        ],
+        "population": 128.0
+    },
+    {
+        "name": "Torregalindo",
+        "coordinates": [
+            -3.7523294,
+            41.5826767
+        ],
+        "population": 123.0
+    },
+    {
+        "name": "Puentedura",
+        "coordinates": [
+            -3.583408,
+            42.0440643
+        ],
+        "population": 122.0
+    },
+    {
+        "name": "Villafranca Montes de Oca",
+        "coordinates": [
+            -3.3086147,
+            42.3883784
+        ],
+        "population": 122.0
+    },
+    {
+        "name": "Villanueva de Argaño",
+        "coordinates": [
+            -3.933169,
+            42.3804783
+        ],
+        "population": 122.0
+    },
+    {
+        "name": "Valdezate",
+        "coordinates": [
+            -3.9305323,
+            41.6023916
+        ],
+        "population": 121.0
+    },
+    {
+        "name": "Quintanapalla",
+        "coordinates": [
+            -3.5345514,
+            42.4084263
+        ],
+        "population": 120.0
+    },
+    {
+        "name": "Neila",
+        "coordinates": [
+            -2.9970186,
+            42.0601046
+        ],
+        "population": 119.0
+    },
+    {
+        "name": "Susinos del Páramo",
+        "coordinates": [
+            -3.9247468,
+            42.4715972
+        ],
+        "population": 118.0
+    },
+    {
+        "name": "Humada",
+        "coordinates": [
+            -4.0837157,
+            42.6679688
+        ],
+        "population": 116.0
+    },
+    {
+        "name": "Arija",
+        "coordinates": [
+            -3.9451961,
+            42.9916248
+        ],
+        "population": 115.0
+    },
+    {
+        "name": "Revilla Vallejera",
+        "coordinates": [
+            -4.1339604,
+            42.1470153
+        ],
+        "population": 115.0
+    },
+    {
+        "name": "Zael",
+        "coordinates": [
+            -3.824322,
+            42.1098268
+        ],
+        "population": 115.0
+    },
+    {
+        "name": "Manzanedo",
+        "coordinates": [
+            -3.6917127,
+            42.8989977
+        ],
+        "population": 115.0
+    },
+    {
+        "name": "Grijalba",
+        "coordinates": [
+            -4.1189988,
+            42.4302456
+        ],
+        "population": 112.0
+    },
+    {
+        "name": "Cardeñuela Riopico",
+        "coordinates": [
+            -3.5600242,
+            42.3593611
+        ],
+        "population": 111.0
+    },
+    {
+        "name": "Santa María del Mercadillo",
+        "coordinates": [
+            -3.559039,
+            41.8600273
+        ],
+        "population": 108.0
+    },
+    {
+        "name": "Villaverde del Monte",
+        "coordinates": [
+            -3.8151528,
+            42.160431
+        ],
+        "population": 108.0
+    },
+    {
+        "name": "Quintanilla de la Mata",
+        "coordinates": [
+            -3.7681497,
+            41.9888129
+        ],
+        "population": 108.0
+    },
+    {
+        "name": "Ameyugo",
+        "coordinates": [
+            -3.0611514,
+            42.6560702
+        ],
+        "population": 108.0
+    },
+    {
+        "name": "Mambrilla de Castrejón",
+        "coordinates": [
+            -3.9848011,
+            41.6669494
+        ],
+        "population": 107.0
+    },
+    {
+        "name": "Hortigüela",
+        "coordinates": [
+            -3.425765,
+            42.0684401
+        ],
+        "population": 107.0
+    },
+    {
+        "name": "Mahamud",
+        "coordinates": [
+            -3.9409416,
+            42.1200649
+        ],
+        "population": 105.0
+    },
+    {
+        "name": "Santa Cecilia",
+        "coordinates": [
+            -3.802824,
+            42.0522264
+        ],
+        "population": 105.0
+    },
+    {
+        "name": "Barbadillo de Herreros",
+        "coordinates": [
+            -3.1743638,
+            42.1507572
+        ],
+        "population": 104.0
+    },
+    {
+        "name": "Santa Cruz del Valle Urbión",
+        "coordinates": [
+            -3.2227788,
+            42.3051485
+        ],
+        "population": 103.0
+    },
+    {
+        "name": "Pardilla",
+        "coordinates": [
+            -3.7110923,
+            41.5517433
+        ],
+        "population": 102.0
+    },
+    {
+        "name": "Bozoó",
+        "coordinates": [
+            -3.0865338,
+            42.7278897
+        ],
+        "population": 102.0
+    },
+    {
+        "name": "Cubo de Bureba",
+        "coordinates": [
+            -3.2060056,
+            42.640148
+        ],
+        "population": 101.0
+    },
+    {
+        "name": "Cubillo del Campo",
+        "coordinates": [
+            -3.6105135,
+            42.1684304
+        ],
+        "population": 101.0
+    },
+    {
+        "name": "Santa Gadea de Alfoz",
+        "coordinates": [
+            -3.9514399,
+            42.9559407
+        ],
+        "population": 101.0
+    },
+    {
+        "name": "Coruña del Conde",
+        "coordinates": [
+            -3.3905895,
+            41.7657004
+        ],
+        "population": 100.0
+    },
+    {
+        "name": "Fuentelisendo",
+        "coordinates": [
+            -3.9012949,
+            41.6218103
+        ],
+        "population": 99.0
+    },
+    {
+        "name": "Ciruelos de Cervera",
+        "coordinates": [
+            -3.5299981,
+            41.9058747
+        ],
+        "population": 99.0
+    },
+    {
+        "name": "Hontangas",
+        "coordinates": [
+            -3.7958319,
+            41.5826524
+        ],
+        "population": 99.0
+    },
+    {
+        "name": "Rabanera del Pinar",
+        "coordinates": [
+            -3.1966167,
+            41.8938326
+        ],
+        "population": 99.0
+    },
+    {
+        "name": "Valdeande",
+        "coordinates": [
+            -3.5287921,
+            41.833454
+        ],
+        "population": 98.0
+    },
+    {
+        "name": "Pineda Trasmonte",
+        "coordinates": [
+            -3.6956524,
+            41.9086885
+        ],
+        "population": 98.0
+    },
+    {
+        "name": "Pinilla de los Barruecos",
+        "coordinates": [
+            -3.3041718,
+            41.9180505
+        ],
+        "population": 98.0
+    },
+    {
+        "name": "Fresneda de la Sierra Tirón",
+        "coordinates": [
+            -3.1360093,
+            42.3152939
+        ],
+        "population": 97.0
+    },
+    {
+        "name": "Villasana de Mena",
+        "coordinates": [
+            -3.2829745,
+            43.1004631
+        ],
+        "population": 97.0
+    },
+    {
+        "name": "Quinta de Cardeña",
+        "coordinates": [
+            -3.6595267,
+            42.2950894
+        ],
+        "population": 97.0
+    },
+    {
+        "name": "Frandovínez",
+        "coordinates": [
+            -3.8376636,
+            42.3097248
+        ],
+        "population": 96.0
+    },
+    {
+        "name": "Avellanosa de Muñó",
+        "coordinates": [
+            -3.8257745,
+            41.9834994
+        ],
+        "population": 96.0
+    },
+    {
+        "name": "Santa María Ribarredonda",
+        "coordinates": [
+            -3.180336,
+            42.6396862
+        ],
+        "population": 95.0
+    },
+    {
+        "name": "Miraveche",
+        "coordinates": [
+            -3.1991375,
+            42.6743332
+        ],
+        "population": 95.0
+    },
+    {
+        "name": "Pineda de la Sierra",
+        "coordinates": [
+            -3.2972245,
+            42.2161087
+        ],
+        "population": 94.0
+    },
+    {
+        "name": "Revilla del Campo",
+        "coordinates": [
+            -3.5400609,
+            42.2117838
+        ],
+        "population": 94.0
+    },
+    {
+        "name": "Palazuelos de la Sierra",
+        "coordinates": [
+            -3.4601818,
+            42.211946
+        ],
+        "population": 93.0
+    },
+    {
+        "name": "Redecilla del Camino",
+        "coordinates": [
+            -3.0651553,
+            42.4379725
+        ],
+        "population": 93.0
+    },
+    {
+        "name": "Padilla de Arriba",
+        "coordinates": [
+            -4.1932038,
+            42.4382653
+        ],
+        "population": 92.0
+    },
+    {
+        "name": "Rebolledo de la Torre",
+        "coordinates": [
+            -4.2271223,
+            42.6889148
+        ],
+        "population": 92.0
+    },
+    {
+        "name": "Villaldemiro",
+        "coordinates": [
+            -3.9843067,
+            42.2473312
+        ],
+        "population": 91.0
+    },
+    {
+        "name": "Fuentemolinos",
+        "coordinates": [
+            -3.8499883,
+            41.6047416
+        ],
+        "population": 91.0
+    },
+    {
+        "name": "Celada del Camino",
+        "coordinates": [
+            -3.9344242,
+            42.26278
+        ],
+        "population": 90.0
+    },
+    {
+        "name": "Villaescusa de Roa",
+        "coordinates": [
+            -4.0165272,
+            41.727792
+        ],
+        "population": 90.0
+    },
+    {
+        "name": "Pedrosa del Páramo",
+        "coordinates": [
+            -3.9737005,
+            42.4412181
+        ],
+        "population": 89.0
+    },
+    {
+        "name": "La Cueva de Roa",
+        "coordinates": [
+            -3.9405223,
+            41.6673939
+        ],
+        "population": 89.0
+    },
+    {
+        "name": "Contreras",
+        "coordinates": [
+            -3.4104416,
+            42.0197874
+        ],
+        "population": 87.0
+    },
+    {
+        "name": "San Adrián de Juarros",
+        "coordinates": [
+            -3.4755771,
+            42.2741651
+        ],
+        "population": 86.0
+    },
+    {
+        "name": "Espinosa de Cervera",
+        "coordinates": [
+            -3.4688486,
+            41.8967066
+        ],
+        "population": 85.0
+    },
+    {
+        "name": "Bahabón de Esgueva",
+        "coordinates": [
+            -3.7292698,
+            41.8613881
+        ],
+        "population": 84.0
+    },
+    {
+        "name": "Rábanos",
+        "coordinates": [
+            -3.2702341,
+            42.319986
+        ],
+        "population": 79.0
+    },
+    {
+        "name": "Villegas",
+        "coordinates": [
+            -4.0169491,
+            42.468108
+        ],
+        "population": 79.0
+    },
+    {
+        "name": "Torrecilla del Monte",
+        "coordinates": [
+            -3.6937373,
+            42.0950629
+        ],
+        "population": 79.0
+    },
+    {
+        "name": "Villalba de Losa",
+        "coordinates": [
+            -3.0882171,
+            42.9363434
+        ],
+        "population": 78.0
+    },
+    {
+        "name": "Santibáñez de Esgueva",
+        "coordinates": [
+            -3.7588164,
+            41.8336543
+        ],
+        "population": 77.0
+    },
+    {
+        "name": "Solarana",
+        "coordinates": [
+            -3.6586441,
+            41.971418
+        ],
+        "population": 77.0
+    },
+    {
+        "name": "Moncalvillo",
+        "coordinates": [
+            -3.1993036,
+            41.9543436
+        ],
+        "population": 76.0
+    },
+    {
+        "name": "Villaverde-Mogina",
+        "coordinates": [
+            -4.0508335,
+            42.1605481
+        ],
+        "population": 75.0
+    },
+    {
+        "name": "Valles de Palenzuela",
+        "coordinates": [
+            -4.0778341,
+            42.1199335
+        ],
+        "population": 75.0
+    },
+    {
+        "name": "Villalbilla de Gumiel",
+        "coordinates": [
+            -3.6252649,
+            41.807094
+        ],
+        "population": 74.0
+    },
+    {
+        "name": "Rucandio",
+        "coordinates": [
+            -3.5415035,
+            42.7515741
+        ],
+        "population": 72.0
+    },
+    {
+        "name": "Itero del Castillo",
+        "coordinates": [
+            -4.2442995,
+            42.2898425
+        ],
+        "population": 71.0
+    },
+    {
+        "name": "Hontanas",
+        "coordinates": [
+            -4.0444754,
+            42.3126025
+        ],
+        "population": 71.0
+    },
+    {
+        "name": "Ciadoncha",
+        "coordinates": [
+            -3.9341394,
+            42.1592689
+        ],
+        "population": 70.0
+    },
+    {
+        "name": "Santibáñez del Val",
+        "coordinates": [
+            -3.4808536,
+            41.9739206
+        ],
+        "population": 70.0
+    },
+    {
+        "name": "Quintanilla San García",
+        "coordinates": [
+            -3.1931626,
+            42.5482373
+        ],
+        "population": 68.0
+    },
+    {
+        "name": "Padilla de Abajo",
+        "coordinates": [
+            -4.1767266,
+            42.4074692
+        ],
+        "population": 67.0
+    },
+    {
+        "name": "Santa María del Invierno",
+        "coordinates": [
+            -3.4377738,
+            42.4428531
+        ],
+        "population": 67.0
+    },
+    {
+        "name": "Redecilla del Campo",
+        "coordinates": [
+            -3.115445,
+            42.4671552
+        ],
+        "population": 67.0
+    },
+    {
+        "name": "Barbadillo del Pez",
+        "coordinates": [
+            -3.2284599,
+            42.1200477
+        ],
+        "population": 66.0
+    },
+    {
+        "name": "San Zadornil",
+        "coordinates": [
+            -3.1581659,
+            42.8413806
+        ],
+        "population": 66.0
+    },
+    {
+        "name": "Fresneña",
+        "coordinates": [
+            -3.134669,
+            42.4141555
+        ],
+        "population": 66.0
+    },
+    {
+        "name": "Torrepadre",
+        "coordinates": [
+            -3.9370054,
+            42.0436922
+        ],
+        "population": 65.0
+    },
+    {
+        "name": "Quintanavides",
+        "coordinates": [
+            -3.4241465,
+            42.4817142
+        ],
+        "population": 64.0
+    },
+    {
+        "name": "Terradillos de Esgueva",
+        "coordinates": [
+            -3.84288,
+            41.8200951
+        ],
+        "population": 64.0
+    },
+    {
+        "name": "Villoruebo",
+        "coordinates": [
+            -3.4420655,
+            42.1682973
+        ],
+        "population": 63.0
+    },
+    {
+        "name": "Valluércanes",
+        "coordinates": [
+            -3.1198541,
+            42.572554
+        ],
+        "population": 63.0
+    },
+    {
+        "name": "San Millán de Lara",
+        "coordinates": [
+            -3.345226,
+            42.1363624
+        ],
+        "population": 61.0
+    },
+    {
+        "name": "Arauzo de Torre",
+        "coordinates": [
+            -3.4223744,
+            41.7982057
+        ],
+        "population": 61.0
+    },
+    {
+        "name": "Rojas",
+        "coordinates": [
+            -3.4422375,
+            42.5782752
+        ],
+        "population": 60.0
+    },
+    {
+        "name": "Villaescusa la Sombría",
+        "coordinates": [
+            -3.4184599,
+            42.4149504
+        ],
+        "population": 60.0
+    },
+    {
+        "name": "Padrones de Bureba",
+        "coordinates": [
+            -3.53218,
+            42.7057482
+        ],
+        "population": 60.0
+    },
+    {
+        "name": "Retuerta",
+        "coordinates": [
+            -3.5065409,
+            42.0296682
+        ],
+        "population": 59.0
+    },
+    {
+        "name": "Cebrecos",
+        "coordinates": [
+            -3.596321,
+            41.9843991
+        ],
+        "population": 58.0
+    },
+    {
+        "name": "Castrillo de Riopisuerga",
+        "coordinates": [
+            -4.252278,
+            42.5150153
+        ],
+        "population": 58.0
+    },
+    {
+        "name": "Úrbel del Castillo",
+        "coordinates": [
+            -3.8447275,
+            42.6192167
+        ],
+        "population": 58.0
+    },
+    {
+        "name": "Zuñeda",
+        "coordinates": [
+            -3.2264746,
+            42.6048358
+        ],
+        "population": 57.0
+    },
+    {
+        "name": "Mazuela",
+        "coordinates": [
+            -3.917864,
+            42.2064052
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Villamayor de Treviño",
+        "coordinates": [
+            -4.1198699,
+            42.4593941
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Mambrillas de Lara",
+        "coordinates": [
+            -3.4613668,
+            42.0949074
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Prádanos de Bureba",
+        "coordinates": [
+            -3.3477004,
+            42.5027424
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Monterrubio de la Demanda",
+        "coordinates": [
+            -3.1131226,
+            42.1491104
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Fuentebureba",
+        "coordinates": [
+            -3.2350577,
+            42.6340379
+        ],
+        "population": 56.0
+    },
+    {
+        "name": "Riocavado de la Sierra",
+        "coordinates": [
+            -3.1973947,
+            42.1525792
+        ],
+        "population": 55.0
+    },
+    {
+        "name": "Tamarón",
+        "coordinates": [
+            -3.9905439,
+            42.2723225
+        ],
+        "population": 55.0
+    },
+    {
+        "name": "Nebreda",
+        "coordinates": [
+            -3.6341657,
+            41.9685521
+        ],
+        "population": 55.0
+    },
+    {
+        "name": "Barrios de Colina",
+        "coordinates": [
+            -3.4608358,
+            42.3956912
+        ],
+        "population": 55.0
+    },
+    {
+        "name": "Fontioso",
+        "coordinates": [
+            -3.7384163,
+            41.9428631
+        ],
+        "population": 54.0
+    },
+    {
+        "name": "Belbimbre",
+        "coordinates": [
+            -4.0127101,
+            42.168718
+        ],
+        "population": 54.0
+    },
+    {
+        "name": "Palazuelos de Muñó",
+        "coordinates": [
+            -3.9890626,
+            42.1966199
+        ],
+        "population": 54.0
+    },
+    {
+        "name": "Villatuelda",
+        "coordinates": [
+            -3.8810981,
+            41.8153167
+        ],
+        "population": 53.0
+    },
+    {
+        "name": "Hurones",
+        "coordinates": [
+            -3.6136387,
+            42.4064376
+        ],
+        "population": 53.0
+    },
+    {
+        "name": "Grisaleña",
+        "coordinates": [
+            -3.264126,
+            42.5913666
+        ],
+        "population": 53.0
+    },
+    {
+        "name": "Arraya de Oca",
+        "coordinates": [
+            -3.3973407,
+            42.4145422
+        ],
+        "population": 53.0
+    },
+    {
+        "name": "Tosantos",
+        "coordinates": [
+            -3.2424229,
+            42.4141088
+        ],
+        "population": 53.0
+    },
+    {
+        "name": "Villazopeque",
+        "coordinates": [
+            -4.0165214,
+            42.1983071
+        ],
+        "population": 52.0
+    },
+    {
+        "name": "Villagalijo",
+        "coordinates": [
+            -3.1918379,
+            42.3488691
+        ],
+        "population": 52.0
+    },
+    {
+        "name": "Castrillo Mota de Judíos",
+        "coordinates": [
+            -4.1722363,
+            42.3078072
+        ],
+        "population": 52.0
+    },
+    {
+        "name": "Quintanilla del Coco",
+        "coordinates": [
+            -3.5176199,
+            41.9787884
+        ],
+        "population": 50.0
+    },
+    {
+        "name": "Aguilar de Bureba",
+        "coordinates": [
+            -3.3277768,
+            42.5906726
+        ],
+        "population": 50.0
+    },
+    {
+        "name": "Llano de Bureba",
+        "coordinates": [
+            -3.4589436,
+            42.6244785
+        ],
+        "population": 49.0
+    },
+    {
+        "name": "Oquillas",
+        "coordinates": [
+            -3.7034821,
+            41.8315653
+        ],
+        "population": 49.0
+    },
+    {
+        "name": "Cilleruelo de Arriba",
+        "coordinates": [
+            -3.6606354,
+            41.9047903
+        ],
+        "population": 49.0
+    },
+    {
+        "name": "Fresno de Rodilla",
+        "coordinates": [
+            -3.4846875,
+            42.4196959
+        ],
+        "population": 49.0
+    },
+    {
+        "name": "Campolara",
+        "coordinates": [
+            -3.4271819,
+            42.1193977
+        ],
+        "population": 48.0
+    },
+    {
+        "name": "Salinillas de Bureba",
+        "coordinates": [
+            -3.387465,
+            42.5520722
+        ],
+        "population": 48.0
+    },
+    {
+        "name": "Berberana",
+        "coordinates": [
+            -3.0594587,
+            42.9198502
+        ],
+        "population": 48.0
+    },
+    {
+        "name": "Quintanaélez",
+        "coordinates": [
+            -3.2987332,
+            42.6693759
+        ],
+        "population": 47.0
+    },
+    {
+        "name": "Jaramillo de la Fuente",
+        "coordinates": [
+            -3.3125095,
+            42.1151721
+        ],
+        "population": 47.0
+    },
+    {
+        "name": "Altable",
+        "coordinates": [
+            -3.0771775,
+            42.6032004
+        ],
+        "population": 47.0
+    },
+    {
+        "name": "Hornillos del Camino",
+        "coordinates": [
+            -3.9259523,
+            42.3385369
+        ],
+        "population": 46.0
+    },
+    {
+        "name": "Villaquirán de la Puebla",
+        "coordinates": [
+            -4.1001439,
+            42.2828862
+        ],
+        "population": 46.0
+    },
+    {
+        "name": "Castellanos de Castro",
+        "coordinates": [
+            -4.033354,
+            42.3289446
+        ],
+        "population": 46.0
+    },
+    {
+        "name": "Arauzo de Salce",
+        "coordinates": [
+            -3.4120266,
+            41.8195157
+        ],
+        "population": 46.0
+    },
+    {
+        "name": "Cuevas de San Clemente",
+        "coordinates": [
+            -3.5688189,
+            42.1300713
+        ],
+        "population": 45.0
+    },
+    {
+        "name": "Iglesiarrubia",
+        "coordinates": [
+            -3.8469783,
+            41.9744459
+        ],
+        "population": 45.0
+    },
+    {
+        "name": "San Medel",
+        "coordinates": [
+            -3.597101,
+            42.3324182
+        ],
+        "population": 45.0
+    },
+    {
+        "name": "Cerratón de Juarros",
+        "coordinates": [
+            -3.3744439,
+            42.4236317
+        ],
+        "population": 45.0
+    },
+    {
+        "name": "Brazacorta",
+        "coordinates": [
+            -3.3669996,
+            41.717424
+        ],
+        "population": 45.0
+    },
+    {
+        "name": "Villamiel de la Sierra",
+        "coordinates": [
+            -3.4174828,
+            42.1915528
+        ],
+        "population": 43.0
+    },
+    {
+        "name": "Villambistia",
+        "coordinates": [
+            -3.261804,
+            42.4051648
+        ],
+        "population": 43.0
+    },
+    {
+        "name": "Espinosa del Camino",
+        "coordinates": [
+            -3.2796725,
+            42.4055584
+        ],
+        "population": 42.0
+    },
+    {
+        "name": "Vallarta de Bureba",
+        "coordinates": [
+            -3.2048503,
+            42.5885237
+        ],
+        "population": 42.0
+    },
+    {
+        "name": "Villanueva de Teba",
+        "coordinates": [
+            -3.1635397,
+            42.6488808
+        ],
+        "population": 42.0
+    },
+    {
+        "name": "Alcocero de Mola",
+        "coordinates": [
+            -3.3581664,
+            42.4725921
+        ],
+        "population": 41.0
+    },
+    {
+        "name": "Encío",
+        "coordinates": [
+            -3.0843048,
+            42.6683531
+        ],
+        "population": 41.0
+    },
+    {
+        "name": "Vizcaínos",
+        "coordinates": [
+            -3.2669089,
+            42.1018113
+        ],
+        "population": 40.0
+    },
+    {
+        "name": "Olmillos de Muñó",
+        "coordinates": [
+            -3.9398962,
+            42.2028204
+        ],
+        "population": 40.0
+    },
+    {
+        "name": "Monasterio de la Sierra",
+        "coordinates": [
+            -3.1931525,
+            42.0507106
+        ],
+        "population": 40.0
+    },
+    {
+        "name": "Carazo",
+        "coordinates": [
+            -3.3547428,
+            41.9678708
+        ],
+        "population": 39.0
+    },
+    {
+        "name": "Vallejera",
+        "coordinates": [
+            -4.1520827,
+            42.1823695
+        ],
+        "population": 39.0
+    },
+    {
+        "name": "Piérnigas",
+        "coordinates": [
+            -3.4131187,
+            42.5901504
+        ],
+        "population": 39.0
+    },
+    {
+        "name": "La Gallega",
+        "coordinates": [
+            -3.2637004,
+            41.8987863
+        ],
+        "population": 39.0
+    },
+    {
+        "name": "Santa Olalla de Bureba",
+        "coordinates": [
+            -3.439743,
+            42.4786307
+        ],
+        "population": 38.0
+    },
+    {
+        "name": "Carcedo de Bureba",
+        "coordinates": [
+            -3.4982038,
+            42.5783936
+        ],
+        "population": 37.0
+    },
+    {
+        "name": "Viloria de Rioja",
+        "coordinates": [
+            -3.1003951,
+            42.4264666
+        ],
+        "population": 37.0
+    },
+    {
+        "name": "Cabezón de la Sierra",
+        "coordinates": [
+            -3.2418285,
+            41.9343089
+        ],
+        "population": 36.0
+    },
+    {
+        "name": "La Revilla",
+        "coordinates": [
+            -3.3309834,
+            42.012589
+        ],
+        "population": 36.0
+    },
+    {
+        "name": "La Parte",
+        "coordinates": [
+            -3.9274262,
+            42.5264822
+        ],
+        "population": 36.0
+    },
+    {
+        "name": "Tejada",
+        "coordinates": [
+            -3.535309,
+            41.9524564
+        ],
+        "population": 35.0
+    },
+    {
+        "name": "Castildelgado",
+        "coordinates": [
+            -3.0848612,
+            42.4372642
+        ],
+        "population": 35.0
+    },
+    {
+        "name": "Haza",
+        "coordinates": [
+            -3.8310662,
+            41.6210565
+        ],
+        "population": 34.0
+    },
+    {
+        "name": "Pinilla de los Moros",
+        "coordinates": [
+            -3.3271657,
+            42.067974
+        ],
+        "population": 33.0
+    },
+    {
+        "name": "Rublacedo de Abajo",
+        "coordinates": [
+            -3.5017388,
+            42.5534049
+        ],
+        "population": 33.0
+    },
+    {
+        "name": "Barrio de Muñó",
+        "coordinates": [
+            -4.0072058,
+            42.175337
+        ],
+        "population": 32.0
+    },
+    {
+        "name": "Torrelara",
+        "coordinates": [
+            -3.5167991,
+            42.1663038
+        ],
+        "population": 32.0
+    },
+    {
+        "name": "Zarzosa de Río Pisuerga",
+        "coordinates": [
+            -4.2680635,
+            42.5359838
+        ],
+        "population": 31.0
+    },
+    {
+        "name": "Quintanabureba",
+        "coordinates": [
+            -3.3664052,
+            42.586161
+        ],
+        "population": 31.0
+    },
+    {
+        "name": "Bañuelos de Bureba",
+        "coordinates": [
+            -3.2808231,
+            42.5005974
+        ],
+        "population": 31.0
+    },
+    {
+        "name": "Cillaperlata",
+        "coordinates": [
+            -3.3582255,
+            42.7824799
+        ],
+        "population": 30.0
+    },
+    {
+        "name": "Ibrillos",
+        "coordinates": [
+            -3.0826424,
+            42.4541673
+        ],
+        "population": 29.0
+    },
+    {
+        "name": "Abajas",
+        "coordinates": [
+            -3.581355,
+            42.623387
+        ],
+        "population": 28.0
+    },
+    {
+        "name": "Mamolar",
+        "coordinates": [
+            -3.362244,
+            41.927038
+        ],
+        "population": 28.0
+    },
+    {
+        "name": "Castil de Peones",
+        "coordinates": [
+            -3.3844208,
+            42.4837724
+        ],
+        "population": 28.0
+    },
+    {
+        "name": "San Vicente del Valle",
+        "coordinates": [
+            -3.1618332,
+            42.3372697
+        ],
+        "population": 28.0
+    },
+    {
+        "name": "Cascajares de Bureba",
+        "coordinates": [
+            -3.2378381,
+            42.6794782
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Vileña",
+        "coordinates": [
+            -3.3239409,
+            42.6221486
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Tobar",
+        "coordinates": [
+            -3.9389483,
+            42.4838628
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Galbarros",
+        "coordinates": [
+            -3.4382172,
+            42.5279739
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Villanueva de Carazo",
+        "coordinates": [
+            -3.3234783,
+            41.9854996
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Cascajares de la Sierra",
+        "coordinates": [
+            -3.4002726,
+            42.0619334
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "La Sequera de Haza",
+        "coordinates": [
+            -3.8165088,
+            41.5638715
+        ],
+        "population": 27.0
+    },
+    {
+        "name": "Berzosa de Bureba",
+        "coordinates": [
+            -3.266226,
+            42.6269035
+        ],
+        "population": 26.0
+    },
+    {
+        "name": "Valmala",
+        "coordinates": [
+            -3.255344,
+            42.3050748
+        ],
+        "population": 26.0
+    },
+    {
+        "name": "Navas de Bureba",
+        "coordinates": [
+            -3.326625,
+            42.6818017
+        ],
+        "population": 24.0
+    },
+    {
+        "name": "Carrias",
+        "coordinates": [
+            -3.2833204,
+            42.4816821
+        ],
+        "population": 24.0
+    },
+    {
+        "name": "La Vid de Bureba",
+        "coordinates": [
+            -3.300255,
+            42.6310493
+        ],
+        "population": 24.0
+    },
+    {
+        "name": "Tinieblas de la Sierra",
+        "coordinates": [
+            -3.3629645,
+            42.17271
+        ],
+        "population": 23.0
+    },
+    {
+        "name": "Cantabrana",
+        "coordinates": [
+            -3.4670984,
+            42.734353
+        ],
+        "population": 23.0
+    },
+    {
+        "name": "Sordillos",
+        "coordinates": [
+            -4.1068703,
+            42.4619774
+        ],
+        "population": 22.0
+    },
+    {
+        "name": "Villaespasa",
+        "coordinates": [
+            -3.4040923,
+            42.0997383
+        ],
+        "population": 22.0
+    },
+    {
+        "name": "Manciles",
+        "coordinates": [
+            -3.9451813,
+            42.456051
+        ],
+        "population": 21.0
+    },
+    {
+        "name": "Palacios de Riopisuerga",
+        "coordinates": [
+            -4.2568616,
+            42.3433567
+        ],
+        "population": 18.0
+    },
+    {
+        "name": "Reinoso de Bureba",
+        "coordinates": [
+            -3.3841421,
+            42.5092523
+        ],
+        "population": 18.0
+    },
+    {
+        "name": "Bascuñana",
+        "coordinates": [
+            -3.0821832,
+            42.425526
+        ],
+        "population": 18.0
+    },
+    {
+        "name": "Rezmondo",
+        "coordinates": [
+            -4.238958,
+            42.5156436
+        ],
+        "population": 17.0
+    },
+    {
+        "name": "Jaramillo Quemado",
+        "coordinates": [
+            -3.3577936,
+            42.0850199
+        ],
+        "population": 10.0
+    },
+    {
+        "name": "Villamedianilla",
+        "coordinates": [
+            -4.1462672,
+            42.1608548
+        ],
+        "population": 9.0
+    },
+    {
+        "name": "Aguas Cándidas",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Alfoz de Bricia",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Alfoz de Quintanadueñas",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Alfoz de Santa Gadea",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Arauzo de Miel",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Arcos",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Condado de Treviño",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Junta de Traslaloma",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Junta de Villalba de Losa",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Jurisdicción de Lara",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Jurisdicción de San Zadornil",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "La Revilla y Ahedo",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "La Vid y Barrios",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Las Hormazas",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Los Altos",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Cuesta-Urria",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Montija",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Río Ubierna",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Sotoscueva",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Valdeporres",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Merindad de Valdivielso",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Partido de la Sierra en Tobalina",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Quintanilla del Agua y Tordueles",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Reinoso",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Santa María Rivarredonda",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Losa",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Manzanedo",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Mena",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Oca",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Santibáñez",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Sedano",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Tobalina",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Valdebezana",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Valdelaguna",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Valdelucio",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de Zamanzas",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Valle de las Navas",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    },
+    {
+        "name": "Villarcayo de Merindad de Castilla la Vieja",
+        "coordinates": [
+            "Desconocidas"
+        ],
+        "population": -1
+    }
+]
