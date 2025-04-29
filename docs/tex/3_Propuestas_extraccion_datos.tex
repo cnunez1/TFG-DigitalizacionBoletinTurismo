@@ -1,0 +1,33 @@
+\capitulo{3}{Propuestas de extracción de datos}
+
+\section{Propuestas de extracción de datos}
+\begin{itemize}
+    \item \textbf{TripAdvisor API:} La API de TripAdvisor contiene millones de reviews de usuarios sobre destinos turísticos de todo el mundo. Debido a sus límites de reviews (5 por lugar, es decir, 5 reviews por solicitud) no es factible.
+    Ofrecen 5000 peticiones gratuitas al mes. 
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Solicitudes} & \textbf{Costo por solicitud} \\
+            \hline
+            0 - 5,000 & €0.00 \\
+            5,001 - 20,000 & €0.00924 \\
+            20,001 - 100,000 & €0.00859 \\
+            100,001 - 500,000 & €0.00804 \\
+            500,000+ & €0.00758 \\
+            \hline
+        \end{tabular}
+        \caption{Costos por solicitud en la API de Tripadvisor}
+    \end{table}
+    \item \textbf{API de Google Places (textSearch) y Google Maps Reviews Scraper de Apify:} Utilizando textSearch se puede obtener un identificador para cada POI de forma gratuita e ilimitada. Para ello, es necesario tener un punto de referencia (coordenadas) y un radio de búsqueda.  
+    Los puntos de referencia se pueden obtener mediante una consulta en Overpass Query Language desde su interfaz web para extraer las coordenadas de OSM. Al contrario que en el caso anterior, ahora no se emplean los puntos límites de los municipios, solo un punto céntrico de cada uno de ellos.
+    El problema en este caso es que no se obtienen todos los POI de un municipio, sino solo los que se encuentran dentro del radio de búsqueda.
+    \item \textbf{API de Google Places (nearbySearch) y ficheros binarios de OpenStreetMaps(OSM):} OSM proporciona ficheros binarios (.osm.pbf) que se pueden convertir a GeoJSON para obtener información relevante sobre los municipios como las coordenadas de sus límites. 
+    Con la API de Google Places se pueden extraer reviews utilizando nearbySearch que permite obtener las reviews de los POI más relevantes que se encuentren cerca de un punto dado por sus coordenadas. 
+    Sin embargo, esta API solo permite obtener 5 reviews por lugar y 60 lugares por cada búsqueda alrededor de un punto. Esto implica que si se quiere obtener información de un municipio con más de 60 POI, se deben realizar múltiples búsquedas y muchas peticiones.
+    \item \textbf{Consultas de Overpass QL, API de Google Places (nearbySearch) y Google Maps Reviews Scraper de Apify:} A través de la interfaz web de Overpass QL
+    Al igual que en el caso anterior, se pueden obtener los límites de los municipios mediante consultas en Overpass QL.
+    Esta herramienta permite extraer reviews de Google Maps de forma ilimitada y gratuita.
+    Con estos identificadores se puede automatizar la extracción de reviews a través de Apify que ofrece 10000 reviews gratuitas por cada cuenta creada.
+    También ofrecen un descuento del 50\% para cuentas educativas. Las dos opciones más interesantes son la cuenta Profesional (18,06€/mes tras el descuento del 50\%) que permite extraer 78000 reviews al mes y la cuenta Scale (92,16€/mes tras el descuento del 50\%) que permite extraer 398000 reviews al mes. También ofrecen un descuento de 10\% si se paga anualmente.
+\end{itemize}
