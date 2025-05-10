@@ -1,0 +1,2 @@
+('ChIJ0_wSCux3Rg0RixVLLDn6czQ', 'Lerma', 'Hotel Restaurante Alisa', 'Tr.ª Madrid-Irún, km 203, 09340 Lerma, Burgos, España'),
+('ChIJhUc9OvB3Rg0RMcS6OIzCfXM', 'Lerma', 'Parador de Lerma', 'Palacio Ducal de Lerma, Pl. Mayor, 1, 09340 Lerma, Burgos, España'),
