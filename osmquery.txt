@@ -1,0 +1,32 @@
+[out:json][timeout:900];
+area["name"="Burgos"]["admin_level"="6"]->.searchArea;
+(
+  node(area.searchArea)["amenity"][amenity!~"bench"][amenity!~"waste_basket"][amenity!~"vending_machine"][amenity!~"recycling"][amenity!~"waste_disposal"][amenity!~"parking_space"];
+  way(area.searchArea)["amenity"][amenity!~"bench"][amenity!~"waste_basket"][amenity!~"vending_machine"][amenity!~"recycling"][amenity!~"waste_disposal"][amenity!~"parking_space"];
+  relation(area.searchArea)["amenity"][amenity!~"bench"][amenity!~"waste_basket"][amenity!~"vending_machine"][amenity!~"recycling"][amenity!~"waste_disposal"][amenity!~"parking_space"];
+  
+  node(area.searchArea)["place"="town_square"];
+  way(area.searchArea)["place"="town_square"];
+  relation(area.searchArea)["place"="town_square"];
+
+  node(area.searchArea)["leisure"="park"];
+  way(area.searchArea)["leisure"="park"];
+  relation(area.searchArea)["leisure"="park"];
+  
+  node(area.searchArea)["shop"][shop!~"lottery"];
+  way(area.searchArea)["shop"][shop!~"lottery"];
+  relation(area.searchArea)["shop"][shop!~"lottery"];
+  
+  node(area.searchArea)["tourism"];
+  way(area.searchArea)["tourism"];
+  relation(area.searchArea)["tourism"];
+  
+  node(area.searchArea)["office"];
+  way(area.searchArea)["office"];
+  relation(area.searchArea)["office"];
+  
+  node(area.searchArea)["historic"];
+  way(area.searchArea)["historic"];
+  relation(area.searchArea)["historic"];
+);
+out center;
