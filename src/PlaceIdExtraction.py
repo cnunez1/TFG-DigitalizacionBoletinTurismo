@@ -1,9 +1,15 @@
-import json, requests, csv
+import json, requests, csv, os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing import Value
 
 # Configura tu API Key de Google Places
 API_KEY = 'AIzaSyC1kf83NyrXbaDa6ColOWQxri5aSmVFMHI'
+
+base_dir = os.path.join(os.path.dirname(__file__), "..", "data", "scripts_data")
+os.makedirs(base_dir, exist_ok=True)
+
+json_file = os.path.join(base_dir, "burgos_pois.json")
+csv_file = os.path.join(base_dir, "pois_details.csv")
 
 # Cargar coordenadas del archivo burgos_pois.json
 def load_coordinates(json_file):
@@ -83,10 +89,7 @@ csv_file = 'pois_details.csv'
 json_file = 'burgos_pois.json'
 
 # Crear el archivo CSV con cabecera si no existe
-try:
-    with open(csv_file, mode='r', encoding='utf-8') as f:
-        pass
-except FileNotFoundError:
+if not os.path.exists(csv_file):
     with open(csv_file, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['Place ID', 'Latitude', 'Longitude'])
