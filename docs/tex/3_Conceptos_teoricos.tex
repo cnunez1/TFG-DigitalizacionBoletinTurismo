@@ -1,0 +1,344 @@
+\capitulo{3}{Conceptos teóricos}
+
+\section{Referencias}
+
+Para llevar a cabo la realización y comprensión de este proyecto, es necesario conocer una serie de conceptos teóricos que se desarrollan en este capítulo. Estos conceptos son fundamentales para entender el contexto y las herramientas utilizadas en el proyecto.
+En este capítulo se explican conceptos relacionados con APIs, procesamiento de lenguaje natural (NLP), redes neuronales y sus mecanismos de entrenamiento, así como el manejo de datos y formatos de almacenamiento.
+
+\section{Application Programming Interface (API)}
+
+Una API es un conjunto de definiciones y protocolos utilizados con el objetivo de comunicar dos aplicaciones. \cite{xataka:api}
+Existen diferentes tipos de APIs, pero para este proyecto me centraré en las APIs privadas de Google Places, Overpass y de Apify.
+A través de una API se pueden realizar peticiones a un servidor para obtener información o realizar acciones. Esto se suele realizar a través del protocolo HTTP y desde Python se puede hacer con la biblioteca requests.
+
+Las peticiones se realizan a través de URLs y pueden incluir parámetros que especifican la información que se desea obtener o la acción que se desea realizar.
+Cabe destacar que normalmente las APIs tienen límites de uso, es decir, un número máximo de peticiones que se pueden realizar en un periodo de tiempo determinado.
+Existen varios tipos de peticiones, las más comunes son GET, POST, PUT y DELETE pero para obtener información basta con las GET.
+Al ser una API privada es necesario obtener acceso a ella mediante una clave o key de API que se obtiene al registrarse en el servicio.
+La obtención de esta clave varía dependiendo de la empresa y el servicio, para acceder a la API de Google Places es necesario registrar una dirección de facturación en una cuenta de Google Cloud y para la API de Apify basta con registrarse en su página web.
+
+\imagen{arquitectura_api}{Arquitectura de un sistema con una API}{1}
+
+\subsection{Mapas y Geolocalización}
+
+Los mapas y la geolocalización son herramientas fundamentales para la visualización y análisis de datos geoespaciales.
+Permiten representar información geográfica de forma visual y realizar análisis espaciales.
+En este proyecto se utilizan mapas de uso libre para obtener la ubicación de los establecimientos y las reseñas obtenidas a través de las APIs.
+
+Como se ha mencionado anteriormente, a través de las APIs se pueden obtener datos de forma sencilla.
+De esta forma se pueden obtener datos de geolocalización como la latitud y longitud de un establecimiento a través de OpenStreetMaps de forma gratuita.
+
+\section{Procesamiento de Lenguaje Natural (NLP)}
+
+El procesamiento de lenguaje natural es una rama de la inteligencia artificial que hace de puente entre la informática y la lingüística. 
+Su objetivo es que las máquinas puedan comprender el lenguaje humano y procesarlo tal y como lo haría un ser humano. \cite{udit:nlp}
+Hoy en día se encuentra presente en muchos ámbitos de nuestra vida cotidiana, como por ejemplo en los asistentes virtuales o los traductores automáticos.
+Respecto a las reseñas, el NLP permite analizar el texto de las reseñas para extraer información relevante, como la opinión del usuario o la polaridad (positiva o negativa) y estos aspectos pueden ser útiles para mejorar la experiencia del usuario o para realizar análisis de sentimiento.
+
+Para llevar a cabo el procesamiento de lenguaje natural, se utilizan diferentes técnicas y herramientas que permiten analizar y comprender el texto.
+Las redes neuronales son una de las herramientas más utilizadas en el procesamiento de lenguaje natural, ya que permiten aprender patrones y relaciones complejas en los datos.
+
+\section{Redes Neuronales}
+
+Una red neuronal es un modelo de aprendizaje automático inspirado en el funcionamiento del cerebro.
+Las redes neuronales están formadas por varias capas. Una capa de entrada, una o varias ocultas y una de salida.
+Cada capa está formada por un número determinado de neuronas y cada neurona recibe señales de las neuronas de la capa anterior, las procesa y las transmite a las neuronas de la capa siguiente.
+
+\imagen{red_neuronal}{Arquitectura de una red neuronal}{1}
+
+\subsection{Representación de datos}
+
+\subsubsection{Tokenización}
+
+Al tratar con textos, es necesario representarlos de una forma que las máquinas puedan entender a través de un preprocesado.
+Un texto es una secuencia de caracteres, y para que las máquinas puedan procesarlo, es necesario convertirlo en una representación numérica.
+Para lograrlo se realiza un proceso conocido como tokenización\cite{medium:tokenization} en el que se divide el texto en unidades más pequeñas, llamadas tokens.
+Existen varios tipos de tokenización dependiendo de la unidad final que se quiera obtener. Un ejemplo de tokenización por palabras y por frases con la frase '\textit{¿Cómo estás?}' sería:
+
+\begin{itemize}
+	\item \textbf{Tokenización por palabras:} ['¿', 'Cómo', 'estás', '?']
+	\item \textbf{Tokenización por caracteres:} ['¿', 'C', 'o', 'm', 'o', ' ', 'e', 's', 't', 'á', 's', '?']
+\end{itemize}
+
+\subsubsection{Vectorización}
+
+Para que el modelo pueda trabajar con las cadenas obtenidas tras las tokenización, es necesario convertirlas en vectores numéricos.
+Para ello se realiza un proceso de vectorización en el que se asigna un número a cada token, creando así un vocabulario.
+Este vocabulario es un diccionario que asocia cada token con un número único.
+Una vez se tiene el vocabulario, se puede representar cada token como un vector numérico.
+
+Nuevamente existen diferentes formas de vectorizar\cite{medium:vectorization} un texto:
+
+\begin{itemize}
+	\item \textbf{One Hot Encoding:} Este método asigna un vector formado por un numero n de números donde n es el número de tokens únicos en el vocabulario.
+	Recibe su nombre de su representación que consiste en un vector de ceros y un único uno en la posición del token. De esa forma para representar el token 'Cómo' en el ejemplo anterior de 4 tokens, el vector sería [0, 1, 0, 0].
+	\item \textbf{Bag of Words:} En este caso se ignora el orden de los tokens y la gramática y se representa la frecuencia de cada token en el texto.
+	Al contar la frecuencia de cada token se puede llegar a la conclusión de cuales son los tokens más relevantes en el texto.
+	\item \textbf{Term Frequency-Inverse Document Frequency (TF-IDF):} Se trata de una técnica con el objetivo de capturar el significado del texto. 
+	Para lograrlo se basa en dos ideas, la frecuencia de los términos (TF) que mide cuantas veces aparece un token en el texto respecto del total de palabras y se calcula dividiendo la frecuencia del token entre el número total de palabras y la frecuencia inversa de documento (IDF) que mide la importancia de un token respecto a todo el texto.
+	Se calcula como el logaritmo del número total de documentos dividido entre el número de documentos que contienen el token.
+	Sin embargo, no aprecia la semántica de las palabras por lo que no puede capturar la similitud entre palabras sinónimas entre otros casos.
+	\item \textbf{Integer Token Sequences:} Este método asigna un número entero único a cada token del vocabulario. Es uno de los métodos de vectorización incluidos en la biblioteca Keras.
+	Suele combinarse con capas de embedding que convierten los números enteros en vectores que capturan el significado semántico y las relaciones entre las palabras.
+	Esto se debe a que el modelo aprende a representar las palabras de forma que las palabras con significados similares tengan vectores similares.
+\end{itemize}
+
+\subsection{Codificación y preprocesado de datos}
+
+Existen conjuntos de datos etiquetados y no etiquetados. Esto depende de si se dispone de información adicional sobre los datos que los divida en categorías o clases.
+Posteriormente se mencionará la relación entre estos conceptos y los tipos de aprendizaje.
+De igual forma que se debe vectorizar el texto, es necesario codificar las etiquetas de los datos para que el modelo pueda trabajar con ellas.
+Se realiza un proceso de codificación o conversión de las etiquetas a números enteros a través de un encoder que representan cada una de las clases o etiquetas del conjunto de datos previo al entrenamiento del modelo.
+
+A continuación es necesario dividir los datos en dos conjuntos, uno de entrenamiento y otro de validación.
+El conjunto de entrenamiento se utiliza para entrenar el modelo y el conjunto de validación se utiliza para evaluar el rendimiento del modelo durante el entrenamiento.
+
+La validación cruzada es una técnica utilizada para evaluar el rendimiento del modelo de forma más robusta.
+Se crean varios subconjuntos del conjunto de datos y se entrena el modelo varias veces. En cada iteración se utiliza un subconjunto diferente como conjunto de validación y el resto como conjunto de entrenamiento.
+
+\subsubsection{Problemas de generalización}
+
+Hay dos casos que pueden llevar a confusión, sobreentrenamiento (overfitting) y subentrenamiento (underfitting).
+El sobreentrenamiento ocurre cuando el modelo se ajusta demasiado a los datos del conjunto de entrenamiento logrando memorizarlos y no generaliza bien a los datos de validación, mientras que el subentrenamiento ocurre cuando el modelo no se ajusta lo suficiente a los datos de entrenamiento y no aprende lo suficiente.
+
+\subsubsection{Regularización}
+
+La regularización es una técnica utilizada para evitar el sobreentrenamiento y mejorar la generalización de las redes neuronales.
+Existen varias técnicas de regularización\cite{medium:regularizacion}, las más comunes son:
+\begin{itemize}
+	\item \textbf{Dropout:} Esta técnica consiste en desactivar aleatoriamente un porcentaje de neuronas durante el entrenamiento. Esto evita que el las neuronas memoricen las entradas. El porcentaje se define directamente en el modelo.
+	\item \textbf{Early Stopping:} Esta técnica consiste en detener el entrenamiento cuando la métrica de validación deja de mejorar. En ese caso se guarda el modelo del epoch o ciclo anterior. Para ello, se monitoriza el rendimiento en cada epoch del modelo. Se suele implementar mediante una función llamada callback que es la que se encarga de la monitorización y de detener el entrenamiento cuando sea necesario y conveniente.
+	\item \textbf{Regularización L1 y L2:} Estas técnicas añaden una penalización a la función loss del modelo.
+	\item \textbf{Batch Normalization:} La normalización por lotes añade un paso entre las neuronas y la función de activación para estabilizar el entrenamiento.
+	\item \textbf{Data Augmentation:} Esta técnica consiste en aumentar el conjunto de datos de entrenamiento mediante la creación de nuevas muestras a partir de las existentes. Por ejemplo, en el caso de imágenes, se pueden aplicar transformaciones como rotación, escalado o cambio de brillo o en textos se puede traducir a otro idioma y revertirlo.
+\end{itemize}
+
+Es común combinar varias de estas técnicas para mejorar el rendimiento del modelo. 
+También es importante tener en cuenta que la regularización puede aumentar el tiempo de entrenamiento del modelo, ya que se añaden pasos adicionales al proceso de entrenamiento.
+
+\subsection{Métricas de evaluación}
+
+Hay varias métricas\cite{clasificacion} que se puede utilizar para evaluar el rendimiento del modelo y tras interpretarlas llegar a la conclusión de si se da uno de estos dos casos.
+En un problema de clasificación binario (2 clases) se pueden obtener valores que representan la predicción sobre los datos.
+
+\begin{itemize}
+	\item \textbf{Verdaderos Positivos (TP):} Son los casos en los que el modelo predice correctamente la clase positiva.
+	\item \textbf{Verdaderos Negativos (TN):} Son los casos en los que el modelo predice correctamente la clase negativa.
+	\item \textbf{Falsos Positivos (FP):} Son los casos en los que el modelo predice incorrectamente la clase positiva.
+	\item \textbf{Falsos Negativos (FN):} Son los casos en los que el modelo predice incorrectamente la clase negativa.
+\end{itemize}
+
+\subsubsection{Accuracy}
+
+La accuracy (no confundir con la precisión) representa el porcentaje de aciertos positivos y negativos sobre el total.
+Su fórmula es:
+\begin{equation}
+	\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+\end{equation}
+Esta métrica es útil cuando las clases están equilibradas, pero puede ser engañosa si hay un desbalance entre las clases.
+Esto se debe a que un modelo puede tener una alta accuracy simplemente prediciendo la clase mayoritaria, sin aprender realmente de los datos.
+Esta es una de las métricas que pueden dar sospechas de que el modelo está sobreentrenado o subentrenado, ya que si la accuracy es muy alta en el conjunto de entrenamiento pero baja en el conjunto de validación, es probable que el modelo esté sobreentrenado.
+Si la accuracy es baja en ambos conjuntos, es probable que el modelo esté subentrenado.
+
+Existe otra variación de la accuracy llamada top k accuracy donde k es el número de clases y que considera correcta una predicción si la clase real está entre las k clases con mayor probabilidad de ser la correcta.
+
+\subsubsection{Precisión}
+
+La precisión sirve para conocer que porcentaje de valores predichos como positivos son realmente positivos.
+Su fórmula es:
+\begin{equation}
+	\text{Precisión} = \frac{TP}{TP + FP}
+\end{equation}
+Esta métrica es útil cuando se quiere minimizar el número de falsos positivos, es decir, cuando se quiere evitar clasificar incorrectamente un caso como positivo.
+
+\subsubsection{Recall}
+
+El recall representa el porcentaje de verdaderos positivos que han sido identificados correctamente por el modelo.
+Su fórmula es:
+\begin{equation}
+	\text{Recall} = \frac{TP}{TP + FN}
+\end{equation}
+
+\subsubsection{F1 Score}
+
+Esta métrica es una combinación de la precisión y el recall con el objetivo de encontrar un equilibrio entre ambas y obtener un valor más objetivo.
+Su fórmula es:
+\begin{equation}
+	\text{F1-Score} = 2 \cdot \frac{\text{Precisión} \cdot \text{Recall}}{\text{Precisión} + \text{Recall}}
+\end{equation}
+Es una métrica muy útil en problemas de clasificación desbalanceados donde una de las clases es mucho más frecuente que la otra, ya que considera tanto los falsos positivos como los falsos negativos y permite ver si a pesar de una alta accuracy se están identificando correctamente las clases minoritarias.
+
+\subsubsection{Loss}
+
+Es una métrica que mide como de incorrectas son las predicciones del modelo respecto a los valores reales. \cite{google:linear-regression}
+Al entrenar un modelo se trata de minimizar esta métrica lo más posible. 
+De la misma forma que la accuracy, si el valor de la loss es muy bajo en el conjunto de entrenamiento pero alto en el conjunto de validación, es probable que el modelo esté sobreentrenado.
+
+En problemas de regresión una de las métricas más comunes es el error cuadrático medio (MSE) como métrica de pérdida, que se calcula como la media de los cuadrados de las diferencias entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
+	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+Otra de las métricas más comunes en regresión es el error absoluto medio (MAE) que se calcula como la media de las diferencias absolutas entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
+	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+En clasificación, la métrica de pérdida más común es la entropía cruzada (cross-entropy loss) que mide la diferencia entre las distribuciones de probabilidad de las predicciones y los valores reales. Su fórmula es: \begin{equation}
+	\text{Cross-Entropy Loss} = -\sum_{i=1}^{n} y_i \log(\hat{y}_i)
+\end{equation}
+Esta métrica es especialmente útil en problemas de clasificación multiclase, ya que penaliza más las predicciones incorrectas que las correctas.
+
+Los optimizadores son algoritmos que se utilizan para minimizar la función de pérdida del modelo durante el entrenamiento.
+Existen varios tipos de optimizadores, los más comunes son:
+\begin{itemize}
+	\item \textbf{SGD (Stochastic Gradient Descent):} Es el optimizador más básico y consiste en actualizar los pesos del modelo en función del gradiente de la función de pérdida respecto a los pesos.
+	\item \textbf{RMSprop (Root Mean Square prop):} Es un optimizador que utiliza una media móvil del cuadrado del gradiente y normaliza el valor para adaptar el aprendizaje.
+	\item \textbf{Adagrad (ADAptative GRADient algorithm):} Introduce el aprendizaje adaptativo, lo que significa que el aprendizaje se adapta a cada parámetro del modelo en función de su frecuencia de actualización.
+	\item \textbf{Adam (Adaptive Moment Estimation):} Es una mezcla entre RMSprop y Adagrad. Utiliza una media móvil exponencial del gradiente para ajustar las tasas de aprendizaje.
+\end{itemize}
+
+\subsubsection{Curva ROC y AUC}
+
+La curva ROC\cite{google:roc-auc} (Receiver Operating Characteristic) es una representación gráfica que representa la tasa de falsos positivos frente al Recall.
+
+El área bajo la curva (AUC) es una métrica que representa la probabilidad de que dados un ejemplo positivo y uno negativo de forma completamente aleatoria, el modelo prediga correctamente el ejemplo positivo con una probabilidad mayor que la del ejemplo negativo.
+ 
+\subsubsection{Matriz de confusión}
+
+La matriz de confusión es una tabla que muestra el número de verdaderos positivos, verdaderos negativos, falsos positivos y falsos negativos.
+Esto se complica cuando se trata de un problema de clasificación multiclase\cite{medium:multiclass-classification}, ya que en este caso la matriz de confusión tendrá una fila y una columna por cada clase, es decir que de tener 10 clases tendremos una matriz de tamaño 10x10.
+En estos casos hay que tener en cuenta como se calculan los valores iniciales:
+
+\begin{itemize}
+	\item \textbf{Verdaderos Positivos (TP):} El número de veces que la clase fue correctamente predicha. Corresponde al valor en la diagonal de la matriz para la clase considerada.
+	\item \textbf{Verdaderos Negativos (TN):} La suma de los valores de la fila a calcular excepto los de las predicciones de la clase que estamos calculando.
+	\item \textbf{Falsos Positivos (FP):} La suma de los valores de la columna de la clase que estamos calculando excepto el valor de la clase positiva.
+	\item \textbf{Falsos Negativos (FN):} La suma de los valores de la fila de la clase que estamos calculando excepto el valor de la clase positiva.
+\end{itemize}
+
+\imagen{matriz3x3}{Matriz de confusión para un problema de clasificación de 3 clases}{0.7}
+
+Los cálculos para obtener las métricas anteriores para la clase A serían:
+
+\begin{itemize}
+	\item \textbf{TP:} M[Real A][Pred A] = 40
+	\item \textbf{TN:} M[Real A][Pred B] + M[Real A][Pred C] = 2 + 3 = 5
+	\item \textbf{FP:} M[Real B][Pred A] + M[Real C][Pred A] = 4 + 5 = 15
+	\item \textbf{FN:} M[Real B][Pred B] + M[Real B][Pred C] + M[Real C][Pred B] + M[Real C][Pred C] = 35 + 1 + 3 + 38 = 77
+\end{itemize}
+
+\subsection{Funciones de activación}
+
+Las funciones de activación son las encargadas de transformar la señal recibida en la de salida que se transmite a la siguiente capa.
+Estas funciones son fundamentales para que la red neuronal pueda aprender y generalizar patrones en los datos.
+Las funciones de activación introducen no linealidades en el modelo, lo que permite a la red aprender relaciones complejas entre las entradas y las salidas.
+Existen varias funciones de activación\cite{funciones-activacion}, las más comunes son:
+\begin{itemize}
+	\item \textbf{Lineal:} Esta función transforma la señal de entrada en la misma señal de salida. Es útil para problemas de regresión. Su fórmula es: \begin{equation}
+	\text{f(x)} = x
+	\end{equation} 
+	\item \textbf{Sigmoide:} Esta función transforma la señal de entrada en un valor entre 0 y 1. Es útil para problemas de clasificación binaria. Su fórmula es: \begin{equation}
+	\text{f(x)} = \frac{1}{1 + e^{-x}}
+	\end{equation}
+	\item \textbf{ReLU (Rectified Linear Unit):} Esta función transforma la señal de entrada en un valor positivo o cero. Es útil para problemas de regresión y clasificación multiclase. Su fórmula es: \begin{equation}
+	\text{f(x)} = \max(0, x)
+	\end{equation}
+	\item \textbf{Softmax:} Esta función transforma la señal de entrada en una distribución de probabilidad sobre las clases. Es útil para problemas de clasificación multiclase. Su fórmula es: \begin{equation}
+	\text{f(x)} = \frac{e^{x_i}}{\sum_{j=1}^{K} e^{x_j}}
+	\end{equation}
+\end{itemize}
+
+\subsection{Aprendizaje}
+
+Existen varios tipos de aprendizaje: supervisado, no supervisado y por refuerzo.
+
+El aprendizaje supervisado es el que cuenta con un conjunto de datos etiquetados, es decir, un conjunto de datos en el que cada entrada tiene una etiqueta o clase asociada.
+El modelo aprende a partir de estos datos y se ajusta para predecir las etiquetas de nuevas entradas.
+Existen dos tipos de aprendizaje supervisado, la clasificación y la regresión.
+La clasificación es el proceso de asignar una etiqueta o clase a una entrada, mientras que la regresión es el proceso de predecir un valor numérico continuo a partir de una entrada.
+Un ejemplo de clasificación sería predecir si una reseña es positiva o negativa o determinar de que tipo de establecimiento es, mientras que un ejemplo de regresión sería predecir la puntuación de una reseña.
+
+El aprendizaje no supervisado es el que no cuenta con un conjunto de datos etiquetados. 
+Por lo tanto, solo se puede describir la estructura de los datos intentando encontrar un patrón común. Su carácter es exploratorio.
+Se suele usar en problemas de agrupamiento (clustering) donde se busca agrupar los datos en función de su similitud.
+
+Por último, el aprendizaje por refuerzo trata de mejorar el rendimiento del modelo a través de un proceso de retroalimentación.
+Su entrada o input es la retroalimentación que obtiene del entorno y su salida o output es la acción que toma el modelo de forma que aprende a base de prueba y error. \cite{aprendizajes}
+
+\subsection{Clasificación}
+
+Al igual que existen diferentes tipos de aprendizaje, existen diferentes tipos de redes neuronales.
+
+\begin{itemize}
+	\item \textbf{Redes Neuronales Convolucionales (CNN):} Son especialmente útiles para el procesamiento de imágenes y datos espaciales debido a que tienen filtros para detectar patrones como bordes o formas. Algunos de sus usos mas comunes son sistemas de vigilancia o radiografías y resonancias.
+	\item \textbf{Redes Neuronales Recurrentes (RNN):} Procesan secuencias teniendo en cuenta el orden haciendo que cada salida dependa de las entradas anteriores. Son útiles para el procesamiento de secuencias de datos, como el texto o el audio.\cite{ibm:rnn}
+	\item \textbf{Redes Neuronales Generativas Adversarias (GAN):} Son un tipo de red neuronal que funciona a partir de dos redes, una generadora y otra evaluadora. Se usan en generación de imágenes realistas o reconstrucción de rostros entre otras cosas.
+	\item \textbf{Redes Neuronales Profundas (DNN):} Cuentan con varias capas ocultas y tratan de aprender patrones muy complejos. Son comunes en diagnósticos médicos complejos o predicción de fraudes financieros.
+\end{itemize}
+
+\subsubsection{LSTM y BiLSTM}
+
+Un caso particular y relevante de las redes neuronales recurrentes son las Long Short-Term Memory (LSTM) que son un tipo de RNN que pueden aprender dependencias a largo plazo y son útiles para el procesamiento de secuencias largas, como el texto o el audio.
+Estas nacen debido a que las RNN tradicionales tienen problemas para aprender dependencias a largo plazo. Si una palabra aparece al principio del texto puede olvidarse al acabar.
+Estas redes neuronales implementan una nueva unidad conocida como celda de memoria. Esta celda permite a la red almacenar información durante más tiempo. 
+Las celdas de memoria están compuestas por tres compuertas: una de entrada, una de salida y una de olvido. \cite{mathworks:lstm}
+Estas compuertas controlan el flujo de información determinando que se retiene y que se olvida. De esta forma son capaces de recordar datos relevantes y olvidar otros.
+
+La compuerta de entrada decide que información nueva se actualiza en la celda de memoria. 
+La compuerta de olvido determina que información se elimina de la celda de memoria.
+Finalmente, la compuerta de salida determina la salida del LSTM y que información se transmite a la siguiente capa.
+
+\imagen{lstm}{Estructura de una celda LSTM}{0.65}
+
+Adicionalmente, existen redes LSTM bidireccionales (BiLSTM) que procesan la secuencia en ambas direcciones a través de dos componentes LSTM, forward LSTM y backward LSTM. 
+Forward LSTM procesa la secuencia hacia delante y backward LSTM hacia atrás. En cada paso, se concatenan las dos salidas lo que permite capturar mejor el contexto pasado y futuro de cada palabra en la secuencia. \cite{mathworks:lstm}
+
+\imagen{bilstm}{Red LSTM Bidireccional}{0.75}
+
+\subsubsection{Mecanismos de entrenamiento}
+
+También existen varios tipos de mecanismos que forman parte del entrenamiento de las redes neuronales, dos ejemplos son feedforward y backpropagation.
+El feedforward o propagación hacia adelante es el proceso por el que se pasa la entrada a través de la red neuronal para obtener la salida.
+El backpropagation o retropropagación es el proceso por el que se calcula el error de la salida y se propaga hacia atrás a través de la red para actualizar los pesos de las conexiones entre las neuronas.
+
+\subsubsection{Entrenamiento y parámetros}
+
+Para entrenar una red neuronal, hay que definir varios parámetroos previamente a su entrenamiento.
+\begin{itemize}
+	\item \textbf{Tasa de aprendizaje (learning rate):} Define cuánto se ajustan los pesos de la red neuronal en cada actualización durante el entrenamiento. Si es demasiado alta, el modelo puede no llegar a una solución óptima; si es demasiado baja, el proceso de entrenamiento será lento.
+	\item \textbf{Cantidad de épocas (epochs):} Indica cuántas veces el modelo recorre el conjunto completo de datos de entrenamiento. Un número excesivo puede causar sobreajuste, mientras que uno insuficiente puede resultar en un modelo poco entrenado.
+	\item \textbf{Tamaño del batch (batch size):} Especifica cuántos ejemplos se procesan antes de actualizar los pesos. Un batch grande puede acelerar el entrenamiento pero dificultar la generalización, mientras que uno pequeño puede hacer el proceso más inestable.
+	\item \textbf{Configuración de capas y neuronas:} Se refiere a la cantidad de capas ocultas y el número de neuronas en cada una. Demasiadas capas o neuronas pueden provocar sobreajuste; muy pocas pueden limitar la capacidad de aprendizaje del modelo.
+\end{itemize}
+
+También es importante definir las funciones de activación y pérdida así como el optimizador, el callback o los conjuntos de validación y entrenamiento.
+
+\section{Formatos de almacenamiento y manejo de datos}
+
+Existen varios formatos de almacenamiento y manejo de datos, los más comunes son CSV y JSON. 
+De la misma forma, existen varias bibliotecas para manejar estos formatos y gestores de bases de datos que permiten almacenar y manejar grandes volúmenes de datos de forma escalable.
+
+\subsection{Formatos de almacenamiento}
+
+\subsubsection{CSV}
+
+El formato CSV (Comma-Separated Values) es un formato de texto plano que se utiliza para almacenar datos tabulares.
+Cada línea del archivo representa una fila de la tabla y cada valor está separado por comas.
+Es un formato muy sencillo y fácil de leer, pero no es adecuado para almacenar datos jerárquicos o complejos.
+
+\subsubsection{JSON}
+El formato JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de leer.
+Se utiliza para almacenar datos estructurados y es muy común en aplicaciones web y APIs.
+
+\subsubsection{SQL}
+SQL (Structured Query Language) es un lenguaje de programación utilizado para gestionar bases de datos relacionales.
+Permite realizar operaciones de creación, lectura, actualización y eliminación de datos (CRUD) en bases de datos.
+
+\subsection{Manejo de datos}
+
+\subsubsection{MySQL}
+
+MySQL es un sistema de gestión de bases de datos relacional que utiliza SQL como lenguaje de consulta.
+Es uno de los sistemas de bases de datos más populares y se utiliza en una gran variedad de aplicaciones web y empresariales.
+Algunas de sus consultas mas comunes son SELECT para obtener datos, INSERT para insertar nuevos datos, UPDATE para actualizar datos existentes y DELETE para eliminar datos.
+A través de estas consultas es muy sencillo manejar y filtrar los datos almacenados en la base de datos que pueden ser los datos obtenidos en otras partes del proyecto en otros formatos como CSV o JSON.
+
+Se suele interactuar con MySQL a través de la línea de comandos de la terminal pero también existe la opción de utilizar herramientas gráficas como MySQL Workbench que permiten gestionar las bases de datos de forma más visual y sencilla.
