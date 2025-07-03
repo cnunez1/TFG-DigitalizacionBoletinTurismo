@@ -1,7 +1,5 @@
 \capitulo{3}{Conceptos teóricos}
 
-\section{Referencias}
-
 Para llevar a cabo la realización y comprensión de este proyecto, es necesario conocer una serie de conceptos teóricos que se desarrollan en este capítulo. Estos conceptos son fundamentales para entender el contexto y las herramientas utilizadas en el proyecto.
 En este capítulo se explican conceptos relacionados con APIs, procesamiento de lenguaje natural (NLP), redes neuronales y sus mecanismos de entrenamiento, así como el manejo de datos y formatos de almacenamiento.
 
@@ -78,9 +76,7 @@ Nuevamente existen diferentes formas de vectorizar\cite{medium:vectorization} un
 	Para lograrlo se basa en dos ideas, la frecuencia de los términos (TF) que mide cuantas veces aparece un token en el texto respecto del total de palabras y se calcula dividiendo la frecuencia del token entre el número total de palabras y la frecuencia inversa de documento (IDF) que mide la importancia de un token respecto a todo el texto.
 	Se calcula como el logaritmo del número total de documentos dividido entre el número de documentos que contienen el token.
 	Sin embargo, no aprecia la semántica de las palabras por lo que no puede capturar la similitud entre palabras sinónimas entre otros casos.
-	\item \textbf{Integer Token Sequences:} Este método asigna un número entero único a cada token del vocabulario. Es uno de los métodos de vectorización incluidos en la biblioteca Keras.
-	Suele combinarse con capas de embedding que convierten los números enteros en vectores que capturan el significado semántico y las relaciones entre las palabras.
-	Esto se debe a que el modelo aprende a representar las palabras de forma que las palabras con significados similares tengan vectores similares.
+	\item \textbf{BERT Embeddings:} Este método crea una representación vectorial basandose en el contexto en el que aparece cada token en el texto. Para ello, utiliza un modelo preentrenado de BERT (Bidirectional Encoder Representations from Transformers).
 \end{itemize}
 
 \subsection{Codificación y preprocesado de datos}
@@ -96,6 +92,8 @@ El conjunto de entrenamiento se utiliza para entrenar el modelo y el conjunto de
 La validación cruzada es una técnica utilizada para evaluar el rendimiento del modelo de forma más robusta.
 Se crean varios subconjuntos del conjunto de datos y se entrena el modelo varias veces. En cada iteración se utiliza un subconjunto diferente como conjunto de validación y el resto como conjunto de entrenamiento.
 
+También se eliminan las stopwords o palabras vacías. Estas son las palabras que no aportan información relevante al texto y se repiten en la mayoría de veces como artículos, preposiciones o conjunciones.
+
 \subsubsection{Problemas de generalización}
 
 Hay dos casos que pueden llevar a confusión, sobreentrenamiento (overfitting) y subentrenamiento (underfitting).
@@ -110,7 +108,7 @@ Existen varias técnicas de regularización\cite{medium:regularizacion}, las má
 	\item \textbf{Early Stopping:} Esta técnica consiste en detener el entrenamiento cuando la métrica de validación deja de mejorar. En ese caso se guarda el modelo del epoch o ciclo anterior. Para ello, se monitoriza el rendimiento en cada epoch del modelo. Se suele implementar mediante una función llamada callback que es la que se encarga de la monitorización y de detener el entrenamiento cuando sea necesario y conveniente.
 	\item \textbf{Regularización L1 y L2:} Estas técnicas añaden una penalización a la función loss del modelo.
 	\item \textbf{Batch Normalization:} La normalización por lotes añade un paso entre las neuronas y la función de activación para estabilizar el entrenamiento.
-	\item \textbf{Data Augmentation:} Esta técnica consiste en aumentar el conjunto de datos de entrenamiento mediante la creación de nuevas muestras a partir de las existentes. Por ejemplo, en el caso de imágenes, se pueden aplicar transformaciones como rotación, escalado o cambio de brillo o en textos se puede traducir a otro idioma y revertirlo.
+	\item \textbf{Data Augmentation:} Esta técnica consiste en aumentar el conjunto de datos de entrenamiento mediante la creación de nuevas muestras a partir de las existentes. Por ejemplo, en el caso de imágenes, se pueden aplicar transformaciones como rotación, escalado o cambio de brillo o en textos se puede traducir a otro idioma y revertirlo o cambiar palabras por sinónimas.
 \end{itemize}
 
 Es común combinar varias de estas técnicas para mejorar el rendimiento del modelo. 
@@ -197,7 +195,7 @@ Existen varios tipos de optimizadores, los más comunes son:
 
 \subsubsection{Curva ROC y AUC}
 
-La curva ROC\cite{google:roc-auc} (Receiver Operating Characteristic) es una representación gráfica que representa la tasa de falsos positivos frente al Recall.
+La curva ROC\cite{google:roc_auc} (Receiver Operating Characteristic) es una representación gráfica que representa la tasa de falsos positivos frente al Recall.
 
 El área bajo la curva (AUC) es una métrica que representa la probabilidad de que dados un ejemplo positivo y uno negativo de forma completamente aleatoria, el modelo prediga correctamente el ejemplo positivo con una probabilidad mayor que la del ejemplo negativo.
  
@@ -274,30 +272,14 @@ Al igual que existen diferentes tipos de aprendizaje, existen diferentes tipos d
 	\item \textbf{Redes Neuronales Profundas (DNN):} Cuentan con varias capas ocultas y tratan de aprender patrones muy complejos. Son comunes en diagnósticos médicos complejos o predicción de fraudes financieros.
 \end{itemize}
 
-\subsubsection{LSTM y BiLSTM}
+\subsubsection{BERT(Bidirectional Encoder Representations from Transformers)}
 
-Un caso particular y relevante de las redes neuronales recurrentes son las Long Short-Term Memory (LSTM) que son un tipo de RNN que pueden aprender dependencias a largo plazo y son útiles para el procesamiento de secuencias largas, como el texto o el audio.
-Estas nacen debido a que las RNN tradicionales tienen problemas para aprender dependencias a largo plazo. Si una palabra aparece al principio del texto puede olvidarse al acabar.
-Estas redes neuronales implementan una nueva unidad conocida como celda de memoria. Esta celda permite a la red almacenar información durante más tiempo. 
-Las celdas de memoria están compuestas por tres compuertas: una de entrada, una de salida y una de olvido. \cite{mathworks:lstm}
-Estas compuertas controlan el flujo de información determinando que se retiene y que se olvida. De esta forma son capaces de recordar datos relevantes y olvidar otros.
+BERT es un modelo de lenguaje de código abierto cread por Google en 2018. Este modelo se basa en una arquitectura de transformadores.
+Este modelo es capaz de entender el contexto de una palabra en una frase basandose en las palabras que la rodean. Por esta razón se dice que es bidireccional.\cite{datacamp:bert}
+En la actualidad, hay muchos modelos preentrenados de BERT, incluso en varios idiomas, que se pueden utilizar para tareas de procesamiento de lenguaje natural como clasificación de texto, análisis de sentimiento o respuesta a preguntas.
 
-La compuerta de entrada decide que información nueva se actualiza en la celda de memoria. 
-La compuerta de olvido determina que información se elimina de la celda de memoria.
-Finalmente, la compuerta de salida determina la salida del LSTM y que información se transmite a la siguiente capa.
-
-\imagen{lstm}{Estructura de una celda LSTM}{0.65}
-
-Adicionalmente, existen redes LSTM bidireccionales (BiLSTM) que procesan la secuencia en ambas direcciones a través de dos componentes LSTM, forward LSTM y backward LSTM. 
-Forward LSTM procesa la secuencia hacia delante y backward LSTM hacia atrás. En cada paso, se concatenan las dos salidas lo que permite capturar mejor el contexto pasado y futuro de cada palabra en la secuencia. \cite{mathworks:lstm}
-
-\imagen{bilstm}{Red LSTM Bidireccional}{0.75}
-
-\subsubsection{Mecanismos de entrenamiento}
-
-También existen varios tipos de mecanismos que forman parte del entrenamiento de las redes neuronales, dos ejemplos son feedforward y backpropagation.
-El feedforward o propagación hacia adelante es el proceso por el que se pasa la entrada a través de la red neuronal para obtener la salida.
-El backpropagation o retropropagación es el proceso por el que se calcula el error de la salida y se propaga hacia atrás a través de la red para actualizar los pesos de las conexiones entre las neuronas.
+Los transformadores estan compuestos de dos bloques: el codificador (encoder) y el decodificador (decoder).
+El codificador se encarga de procesar la entrada y de tokenizar el texto, mientras que el decodificador se encarga de generar la salida.\cite{datacamp:transformers}
 
 \subsubsection{Entrenamiento y parámetros}
 
@@ -334,11 +316,16 @@ Permite realizar operaciones de creación, lectura, actualización y eliminació
 
 \subsection{Manejo de datos}
 
-\subsubsection{MySQL}
+\subsubsection{Azure SQL Database}
 
-MySQL es un sistema de gestión de bases de datos relacional que utiliza SQL como lenguaje de consulta.
-Es uno de los sistemas de bases de datos más populares y se utiliza en una gran variedad de aplicaciones web y empresariales.
+Azure SQL Database es un servicio de base de datos relacional en la nube proporcionado por Microsoft Azure que utiliza SQL Server como motor de base de datos y SQL como lenguaje de consulta.
+Es uno de los servicios de bases de datos más populares y se utiliza en una gran variedad de aplicaciones web y empresariales.
 Algunas de sus consultas mas comunes son SELECT para obtener datos, INSERT para insertar nuevos datos, UPDATE para actualizar datos existentes y DELETE para eliminar datos.
 A través de estas consultas es muy sencillo manejar y filtrar los datos almacenados en la base de datos que pueden ser los datos obtenidos en otras partes del proyecto en otros formatos como CSV o JSON.
 
-Se suele interactuar con MySQL a través de la línea de comandos de la terminal pero también existe la opción de utilizar herramientas gráficas como MySQL Workbench que permiten gestionar las bases de datos de forma más visual y sencilla.
+Se suele interactuar con Azure SQL Database a través de una conexión ODBC o JDBC, que permite establecer una conexión entre la aplicación y la base de datos. 
+Esto se puede hacer utilizando la biblioteca pyodbc en Python e instalando un driver (ODBC Driver 17 for SQL Server) de la web de Microsoft. 
+También se puede interactuar con la base de datos a través de SQL Server Management Studio (SSMS), que es una herramienta de administración de bases de datos similar a MySQL Workbench proporcionada por Microsoft.
+
+Para conectarse a la base de datos, es necesario proporcionar la cadena de conexión que incluye el nombre del servidor, el nombre de la base de datos, el usuario y la contraseña.
+Es necesario que la IP del usuario que se quiera conectar este permitida en las reglas de firewall del servidor de la base de datos.
