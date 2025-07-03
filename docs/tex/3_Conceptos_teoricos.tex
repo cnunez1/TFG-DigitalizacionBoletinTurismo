@@ -38,8 +38,8 @@ Las redes neuronales son una de las herramientas más utilizadas en el procesami
 
 \section{Redes Neuronales}
 
-Una red neuronal es un modelo de aprendizaje automático inspirado en el funcionamiento del cerebro.
-Las redes neuronales están formadas por varias capas. Una capa de entrada, una o varias ocultas y una de salida.
+Una red neuronal es un modelo de aprendizaje automático inspirado en el funcionamiento del cerebro. \cite{google:nn}
+Las redes neuronales están formadas por varias capas. Entre estas se encuentra la capa de entrada, las capas ocultas y finalmente, la capa de salida.
 Cada capa está formada por un número determinado de neuronas y cada neurona recibe señales de las neuronas de la capa anterior, las procesa y las transmite a las neuronas de la capa siguiente.
 
 \imagen{red_neuronal}{Arquitectura de una red neuronal}{1}
@@ -86,11 +86,8 @@ Posteriormente se mencionará la relación entre estos conceptos y los tipos de 
 De igual forma que se debe vectorizar el texto, es necesario codificar las etiquetas de los datos para que el modelo pueda trabajar con ellas.
 Se realiza un proceso de codificación o conversión de las etiquetas a números enteros a través de un encoder que representan cada una de las clases o etiquetas del conjunto de datos previo al entrenamiento del modelo.
 
-A continuación es necesario dividir los datos en dos conjuntos, uno de entrenamiento y otro de validación.
-El conjunto de entrenamiento se utiliza para entrenar el modelo y el conjunto de validación se utiliza para evaluar el rendimiento del modelo durante el entrenamiento.
-
-La validación cruzada es una técnica utilizada para evaluar el rendimiento del modelo de forma más robusta.
-Se crean varios subconjuntos del conjunto de datos y se entrena el modelo varias veces. En cada iteración se utiliza un subconjunto diferente como conjunto de validación y el resto como conjunto de entrenamiento.
+A continuación es necesario dividir el conjunto de datos en tres subconjuntos, uno de entrenamiento, otro de validación y otro de test.
+El entrenamiento se utiliza para entrenar el modelo y el conjunto de validación para ajustar los hiperparámetros. El de test se usa evaluar el rendimiento del modelo una vez entrenado.
 
 También se eliminan las stopwords o palabras vacías. Estas son las palabras que no aportan información relevante al texto y se repiten en la mayoría de veces como artículos, preposiciones o conjunciones.
 
@@ -120,10 +117,10 @@ Hay varias métricas\cite{clasificacion} que se puede utilizar para evaluar el r
 En un problema de clasificación binario (2 clases) se pueden obtener valores que representan la predicción sobre los datos.
 
 \begin{itemize}
-	\item \textbf{Verdaderos Positivos (TP):} Son los casos en los que el modelo predice correctamente la clase positiva.
-	\item \textbf{Verdaderos Negativos (TN):} Son los casos en los que el modelo predice correctamente la clase negativa.
-	\item \textbf{Falsos Positivos (FP):} Son los casos en los que el modelo predice incorrectamente la clase positiva.
-	\item \textbf{Falsos Negativos (FN):} Son los casos en los que el modelo predice incorrectamente la clase negativa.
+	\item \textbf{Verdaderos Positivos (TP):} Instancias en las que la clase positiva es correctamente predicha por el modelo.
+	\item \textbf{Verdaderos Negativos (TN):} Instancias en las que la clase negativa es correctamente predicha por el modelo.
+	\item \textbf{Falsos Positivos (FP):} Instancias en las que el modelo predice incorrectamente la clase positiva.
+	\item \textbf{Falsos Negativos (FN):} Instancias en las que el modelo predice incorrectamente la clase negativa.
 \end{itemize}
 
 \subsubsection{Accuracy}
@@ -172,7 +169,7 @@ Es una métrica que mide como de incorrectas son las predicciones del modelo res
 Al entrenar un modelo se trata de minimizar esta métrica lo más posible. 
 De la misma forma que la accuracy, si el valor de la loss es muy bajo en el conjunto de entrenamiento pero alto en el conjunto de validación, es probable que el modelo esté sobreentrenado.
 
-En problemas de regresión una de las métricas más comunes es el error cuadrático medio (MSE) como métrica de pérdida, que se calcula como la media de los cuadrados de las diferencias entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
+En problemas de regresión una de las métricas más comunes es el error cuadrático medio (MSE) como métrica de pérdida. Este representa la media de los cuadrados de las diferencias entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
 	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
 Otra de las métricas más comunes en regresión es el error absoluto medio (MAE) que se calcula como la media de las diferencias absolutas entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
@@ -318,9 +315,9 @@ Permite realizar operaciones de creación, lectura, actualización y eliminació
 
 \subsubsection{Azure SQL Database}
 
-Azure SQL Database es un servicio de base de datos relacional en la nube proporcionado por Microsoft Azure que utiliza SQL Server como motor de base de datos y SQL como lenguaje de consulta.
-Es uno de los servicios de bases de datos más populares y se utiliza en una gran variedad de aplicaciones web y empresariales.
-Algunas de sus consultas mas comunes son SELECT para obtener datos, INSERT para insertar nuevos datos, UPDATE para actualizar datos existentes y DELETE para eliminar datos.
+Azure SQL Database es un motor de base de datos en la nube de Microsoft Azure.
+Esta plataforma proporciona una base de datos SQL segura, escalable y de alta disponibilidad.\cite{azure}
+Algunas de sus consultas mas comunes son SELECT para obtener datos, INSERT para insertar nuevos datos, UPDATE para actualizar datos y DELETE para eliminar datos.
 A través de estas consultas es muy sencillo manejar y filtrar los datos almacenados en la base de datos que pueden ser los datos obtenidos en otras partes del proyecto en otros formatos como CSV o JSON.
 
 Se suele interactuar con Azure SQL Database a través de una conexión ODBC o JDBC, que permite establecer una conexión entre la aplicación y la base de datos. 
