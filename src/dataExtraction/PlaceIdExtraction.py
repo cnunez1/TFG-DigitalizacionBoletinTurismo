@@ -1,9 +1,12 @@
 import json, requests, csv, os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing import Value
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configura tu API Key de Google Places
-API_KEY = 'AIzaSyC1kf83NyrXbaDa6ColOWQxri5aSmVFMHI'
+API_KEY = os.getenv('GOOGLE_API_KEY')
 
 base_dir = os.path.join(os.path.dirname(__file__), "..", "data", "scripts_data")
 os.makedirs(base_dir, exist_ok=True)

@@ -82,7 +82,7 @@ overpassURL = "http://overpass-api.de/api/interpreter"
 response = requests.get(overpassURL, params={'data': query})
 json_data = response.json()
 
-output_dir = os.path.join(os.path.dirname(__file__), "..", "data", "scripts_data")
+output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "data", "scripts_data")
 
 os.makedirs(output_dir, exist_ok=True)  
 output_path = os.path.join(output_dir, "burgos_pois.json")
