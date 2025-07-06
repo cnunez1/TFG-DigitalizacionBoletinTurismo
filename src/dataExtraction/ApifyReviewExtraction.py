@@ -2,14 +2,14 @@ import pandas as pd
 import time, os
 from apify_client import ApifyClient
 
-base_dir = os.path.join(os.path.dirname(__file__), "..", "data", "scripts_data")
+base_dir = os.path.join(os.path.dirname(__file__), "inputs")
 os.makedirs(base_dir, exist_ok=True)
 
-csv_file = os.path.join(base_dir, "google_reviews_agua.csv")
+csv_file = os.path.join(base_dir, "apifyReviews.csv")
 
 APIFY_TOKEN = 'apify_api_BMf8Q3ouJqM7nIqq9mUMJKe0gLOj5v3e2hF4'
 ACTOR_ID = 'compass/google-maps-reviews-scraper'
-campos = ["categoryName", "city", "reviewsCount", "stars", "state", "text", "title", "placeId", "url", "name"]
+campos = ["categoryName", "city", "reviewsCount", "totalScore", "stars", "state", "text", "title", "location", "originalLanguage", "publishedAtDate", "placeId", "url", "name"]
 
 print(f"Iniciando el cliente de Apify con token {APIFY_TOKEN}")
 
@@ -19,7 +19,7 @@ start_time = time.time()
 # Actor input
 run_input = {
     "placeIds": ["ChIJ-3KGQtH8RQ0Rv8z7azqFOnc"],
-    "maxReviews": 99999,
+    "maxReviews": 10,
     "reviewsSort": "newest",
     "personalData": True,
     "language": "es"
@@ -41,7 +41,6 @@ for item in dataset_items:
 
 if filtered_data:
     df = pd.DataFrame(filtered_data, columns=campos)
-    
     file_exists = os.path.isfile(csv_file)
     df.to_csv(csv_file, mode='a', header=not file_exists, index=False)
     print(f"Datos agregados a {csv_file}")

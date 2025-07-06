@@ -9,23 +9,22 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
-import os, pickle, tqdm
+import os, pickle, tqdm, re, nltk, random
 import matplotlib.pyplot as plt
 import seaborn as sns
-import re
-import nltk
+from collections import Counter
 from nltk.corpus import wordnet, stopwords
-import random
-
-# HuggingFace imports para BERT español
 from transformers import BertTokenizer, TFBertModel
 
-# Descargar recursos NLTK
+# Sinónimos
 nltk.download('wordnet', quiet=True)
 nltk.download('omw-1.4', quiet=True)
+# Artículos, conjunciones, etc.
 nltk.download('stopwords', quiet=True)
+myStopwords = ["si", "buen", "bien", "mas"]
 
 STOPWORDS_ES = set(stopwords.words('spanish'))
+STOPWORDS_ES.update(myStopwords)
 
 # Preprocesamiento de texto
 def clean_text(text):
@@ -34,17 +33,30 @@ def clean_text(text):
     text = re.sub(r'\@w+|\#', '', text)
     text = re.sub(r'[^\w\s]', '', text)
     text = text.strip()
-    return text
+
+    words = text.split()
+    words = [word for word in words if word not in STOPWORDS_ES]
+    return " ".join(words)
 
 # Aumento de datos
 def augment_text_synonym_replacement_es(text, p=0.1):
     words = text.split()
     new_words = words[:]
-    random_word_list = list(set([word for word in words if word not in STOPWORDS_ES]))
-    random.shuffle(random_word_list)
-    num_replaced_words = max(1, int(len(random_word_list) * p))
 
-    for random_word in random_word_list[:num_replaced_words]:
+    # Generar la lista de palabras candidatas (sin stopwords y sin duplicados)
+    unique_words = set()
+    for word in words:
+        if word not in STOPWORDS_ES:
+            unique_words.add(word)
+
+    candidate_words = list(unique_words)
+    random.shuffle(candidate_words)
+
+    # Determinar cuántas palabras se reemplazarán (1 a n)
+    num_replaced_words = max(1, int(len(candidate_words) * p))
+
+    # Reemplazar palabras por sinónimos
+    for random_word in candidate_words[:num_replaced_words]:
         synonyms = []
         for syn in wordnet.synsets(random_word, lang='spa'):
             for lemma in syn.lemmas('spa'):
@@ -52,18 +64,72 @@ def augment_text_synonym_replacement_es(text, p=0.1):
                 if synonym != random_word and synonym not in synonyms:
                     synonyms.append(synonym)
         if synonyms:
-            synonym = random.choice(synonyms)
+            chosen_synonym = random.choice(synonyms)
             for i, w in enumerate(new_words):
                 if w == random_word:
-                    new_words[i] = synonym
+                    new_words[i] = chosen_synonym
     return " ".join(new_words)
 
 # Cargar datos
-data_dir = "./data/"
-df = pd.read_csv(os.path.join(data_dir, "2kreviewsfiltered.csv"))
+df = pd.read_csv("trainingDataset.csv")
 df = df[["text", "categoryName"]].dropna()
 df["text"] = df["text"].astype(str).apply(clean_text)
 df = df[df["text"] != ""]
+
+# EDA
+print("\nExploración inicial del dataset:")
+
+# Distribución de clases
+print(f"Total de muestras: {len(df)}")
+print(f"Total de clases únicas: {df['categoryName'].nunique()}")
+print("\nDistribución por clase:")
+print(df["categoryName"].value_counts())
+
+plt.figure(figsize=(10,6))
+sns.countplot(data=df, y="categoryName", order=df["categoryName"].value_counts().index)
+plt.title("Distribución de Clases")
+plt.xlabel("Cantidad de muestras")
+plt.ylabel("Categoría")
+plt.tight_layout()
+plt.show()
+
+# Longitud de texto
+df["text_length"] = df["text"].apply(lambda x: len(x.split()))
+
+plt.figure(figsize=(10,6))
+sns.histplot(df["text_length"], bins=50, kde=True)
+plt.title("Distribución de Longitud de Texto (en palabras)")
+plt.xlabel("Número de palabras")
+plt.ylabel("Frecuencia")
+plt.tight_layout()
+plt.show()
+
+max_len = df["text_length"].max()
+min_len = df["text_length"].min()
+print(f"\nTexto más largo tiene {max_len} palabras.")
+print(f"Texto más corto tiene {min_len} palabras.")
+
+mean_len = df["text_length"].mean()
+std_len = df["text_length"].std()
+print(f"Promedio de longitud de texto: {mean_len:.2f} ± {std_len:.2f} palabras.")
+
+all_words = " ".join(df["text"]).split()
+word_freq = Counter([w for w in all_words if w not in STOPWORDS_ES])
+most_common_words = word_freq.most_common(15)
+
+# Palabras más comunes
+print("\nPalabras más comunes (excluyendo stopwords):")
+for word, freq in most_common_words:
+    print(f"{word}: {freq}")
+
+words, freqs = zip(*most_common_words)
+plt.figure(figsize=(10,6))
+sns.barplot(x=list(freqs), y=list(words), palette="magma")
+plt.title("Palabras Más Comunes (sin stopwords)")
+plt.xlabel("Frecuencia")
+plt.ylabel("Palabra")
+plt.tight_layout()
+plt.show()
 
 # Codificar etiquetas
 label_encoder = LabelEncoder()
@@ -74,7 +140,7 @@ y_encoded = df["encoded_label"].values
 bert_model = TFBertModel.from_pretrained("dccuchile/bert-base-spanish-wwm-cased")
 tokenizer = BertTokenizer.from_pretrained("dccuchile/bert-base-spanish-wwm-cased")
 
-def get_bert_embeddings(texts, max_len=512, batch_size=64):
+def get_bert_embeddings(texts, max_len=128, batch_size=16):
     embeddings = []
     for i in tqdm.tqdm(range(0, len(texts), batch_size)):
         batch = texts[i:i + batch_size]
@@ -90,8 +156,9 @@ X_texts = df["text"].tolist()
 X_train_text, X_test_text, y_train, y_test = train_test_split(
     X_texts, y_encoded, test_size=0.15, random_state=42, stratify=y_encoded
 )
+
 X_train_text, X_val_text, y_train, y_val = train_test_split(
-    X_train_text, y_train, test_size=0.1765, random_state=42, stratify=y_train
+    X_train_text, y_train, test_size=0.15, random_state=42, stratify=y_train
 )
 
 # Aumento de datos
