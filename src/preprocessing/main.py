@@ -3,8 +3,8 @@ from translateReviews import traducir_reviews
 from cleanReviews import limpiar_reviews
 
 def main():
-    csv_reviews = "inputs/all-task-1464-detailed-reviews.csv"
-    csv_poi = "inputs/all-task-1464.csv"
+    csv_reviews = "inputs/all-task-1842-detailed-reviews.csv"
+    csv_poi = "inputs/all-task-1842.csv"
     estado = "Burgos"
     max_reviews = 5000 # Máximo de reseñas a procesar por POI (limitado para construir un dataset balanceado)
 

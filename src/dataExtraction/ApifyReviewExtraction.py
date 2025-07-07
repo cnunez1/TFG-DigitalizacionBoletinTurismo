@@ -1,13 +1,16 @@
 import pandas as pd
 import time, os
 from apify_client import ApifyClient
+from dotenv import load_dotenv
+
+load_dotenv()
 
 base_dir = os.path.join(os.path.dirname(__file__), "inputs")
 os.makedirs(base_dir, exist_ok=True)
 
 csv_file = os.path.join(base_dir, "apifyReviews.csv")
 
-APIFY_TOKEN = 'apify_api_BMf8Q3ouJqM7nIqq9mUMJKe0gLOj5v3e2hF4'
+APIFY_TOKEN = os.getenv('APIFY_TOKEN')
 ACTOR_ID = 'compass/google-maps-reviews-scraper'
 campos = ["categoryName", "city", "reviewsCount", "totalScore", "stars", "state", "text", "title", "location", "originalLanguage", "publishedAtDate", "placeId", "url", "name"]
 
