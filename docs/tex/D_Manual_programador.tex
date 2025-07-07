@@ -200,6 +200,10 @@ Al ejecutar la celda de las predicciones, se generará un fichero \texttt{datos.
 
 Respecto a las recomendaciones, no es necesario cargar ningún fichero ya que se generan en base al contenido de la base de datos. 
 Al ejecutar su celda, se generará un fichero \texttt{recomendaciones.sql} que se puede cargar en la base de datos para insertar las recomendaciones.
+Además, se muestra en una gráfica el método del codo. Este método se usa para calcular el número óptimo de clusters para las recomendaciones.
+Se toma como valor el punto en el que se empieza a estabilizar la curva. Por esa razón, se han utilizado 7 clusters.
+
+\imagen{codo}{Método del codo}{1}
 
 En el notebook se incluye una función \texttt{cargar\_sql\_en\_bd} y las llamadas correspondientes para cargar los ficheros de datos y recomendaciones.
 Esta función necesita tres parámetros:
