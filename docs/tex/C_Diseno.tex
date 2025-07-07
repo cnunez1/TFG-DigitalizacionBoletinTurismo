@@ -34,8 +34,8 @@ Esto implica que este paso no es necesario si se ha optado por el scraper de Api
 El segundo script toma el fichero CSV obtenido vía Apify o vía paso anterior y se encarga de detectar el idioma de las reseñas y de traducirlas a español si es que no están en español. 
 Para no perder la reseña original, se añade el campo 'text\_original' que contiene la reseña sin traducir.
 
-Finalmente, el tercer script limpia saltos de línea y valores nulos de las reseñas y elimina las que tienen menos de 15 palabras para 
-garantizar que las reseñas contengan información suficiente para el análisis posterior.
+Finalmente, el tercer script limpia saltos de línea y valores nulos de las reseñas y elimina las que tienen menos de 15 palabras devolviendo un fichero CSV limpio para
+usar el modelo entrenado.
 
 \subsection{Fase de predicciones y recomendaciones}
 
@@ -64,6 +64,18 @@ Ambos enfoques generan ficheros CSV con la información necesaria para el análi
 Es la segunda fase del proyecto donde se procesan los datos obtenidos en la fase anterior.
 Se realizan varias tareas como la detección del idioma de las reseñas, la traducción al español, la limpieza de saltos de línea y la eliminación de reseñas con menos de 15 palabras.
 Esta fase es crucial para garantizar que los datos estén en un formato adecuado para el análisis posterior.
+
+\subsubsection{Creación del conjunto de datos de entrenamiento}
+
+Asociado a la fase de preprocesamiento se encuentra la creación del dataset de entrenamiento.
+Este dataset ha sido creado por mí de forma manual a partir de las reseñas obtenidas en los pasos anteriores.
+Para ello, he extraído reseñas de varios recursos seleccionados manualmente a partir de Google Maps y he reetiquetado cada reseña con la categoría del recurso al que pertenece.
+Este dataset se encuentra en el directorio \texttt{src/trainingDataset.csv}.
+
+A continuación, se muestran varias métricas obtenidas al analizar este dataset.
+
+\imagen{EDA}{Distribución de reseñas por POI y categoría}{1}
+\imagen{EDA2}{Distribución de longitud de texto}{1}
 
 \subsection{Entrenamiento del modelo}
 
