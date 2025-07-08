@@ -314,6 +314,7 @@
 \makeatletter
 \usepackage{xcolor}
 \newcommand{\tutor}[1]{\def\@tutor{#1}}
+\newcommand{\cotutor}[1]{\def\@cotutor{#1}}
 \newcommand{\course}[1]{\def\@course{#1}}
 \definecolor{cpardoBox}{HTML}{E6E6FF}
 \def\maketitle{
@@ -345,6 +346,7 @@
     Presentado por \@author{}\\ 
     en Universidad de Burgos --- \@date{}\\
     Tutor: \@tutor{}\\
+    Cotutor: \@cotutor{}\\
   }%
   \end{center}%
   \null
@@ -358,6 +360,7 @@
 \title{Digitalización del Boletín de Turismo del Observatorio de la Provincia de Burgos}
 \author{\nombre}
 \tutor{Bruno Baruque Zanón}
+\cotutor{Julio César Puche Regaliza}
 \date{\today}
 
 \begin{document}
@@ -374,9 +377,9 @@
 
 \noindent\includegraphics[width=\textwidth]{cabecera}\vspace{1cm}
 
-\noindent D. Bruno Baruque Zanón, profesor del departamento de Digitalización, área de Ciencia de la Computación e Inteligencia Artificial.
+\noindent D. Bruno Baruque Zanón, profesor del departamento de Digitalización, área de Ciencia de la Computación e Inteligencia Artificial y D. Julio César Puche Regaliza, profesor del departamento de Economía Aplicada, área de Métodos Cuantitativos para la Economía y la Empresa.
 
-\noindent Expone:
+\noindent Exponen:
 
 \noindent Que el alumno D. \nombre, con DNI 71301258Q, ha realizado el Trabajo final de Grado en Ingeniería Informática titulado Digitalización del Boletín de Turismo del Observatorio de la Provincia de Burgos. 
 
@@ -399,7 +402,7 @@ D. Bruno Baruque Zanón\\
 \begin{minipage}{0.45\textwidth}
 \begin{flushleft} %\large
 Vº. Bº. del co-tutor:\\[2cm]
-D. nombre co-tutor
+D. Julio César Puche Regaliza\\
 \end{flushleft}
 \end{minipage}
 \hfill
@@ -422,7 +425,7 @@ D. nombre co-tutor
 % Abstract en castellano
 \renewcommand*\abstractname{Resumen}
 \begin{abstract}
-En este proyecto se ha desarrollado un sistema de extracción de reseñas y recursos junto a su preprocesado para entrenar una red neuronal que sea capaz de clasificar los recursos(POI) por su tipo.
+En este proyecto se ha desarrollado un sistema de extracción de reseñas y recursos junto a su preprocesado para entrenar una red neuronal que sea capaz de clasificar los recursos (POI) por su tipo.
 Además, se ha creado un cuadro de mando en PowerBI que permite visualizar los resultados obtenidos así como métricas relevantes sobre las reseñas y la distribución de los recursos.
 El objetivo es facilitar la digitalización del boletín de turismo del Observatorio de la Provincia de Burgos, permitiendo una mejor gestión y análisis de la información disponible.
 \end{abstract}
@@ -437,7 +440,7 @@ redes neuronales, procesamiento de lenguaje natural, turismo, BERT, reseñas, re
 % Abstract en inglés
 \renewcommand*\abstractname{Abstract}
 \begin{abstract}
-In this project, a system for extracting reviews and resources(POI) and their preprocessing has been developed to train a neural network capable of classifying resources by type.
+In this project, a system for extracting reviews and resources (POI) and their preprocessing has been developed to train a neural network capable of classifying resources by type.
 In addition, a PowerBI dashboard has been created to visualise the results obtained as well as relevant metrics on the reviews and the distribution of resources.
 The objective is to facilitate the digitalisation of the tourism bulletin of the Observatory of the Province of Burgos, enabling better management and analysis of the available information.
 \end{abstract}

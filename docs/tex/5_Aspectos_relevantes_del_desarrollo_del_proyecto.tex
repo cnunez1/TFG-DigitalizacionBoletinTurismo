@@ -67,27 +67,6 @@ A continuación se presentan las diferentes propuestas de extracción de datos q
 Debido a las limitaciones de las propuestas anteriores, únicamente para cargar la base de datos con los recursos a mostrar en el cuadro de mando se ha optado por utilizar un scraper de código abierto disponible en GitHub\cite{scraper} que permite extraer las reseñas y los recursos de forma gratuita y más masiva.
 Dado que el proyecto tiene un enfoque educativo, el desarrollador de dicho scraper me ha ofrecido la versión de pago de forma gratuita.
 
-\subsection{Pipeline de extracción de datos}
-
-Para la extracción de datos se han desarrollado varios scripts en Python que de ejecutarse ordenadamente permiten obtener las reseñas de los POIs de los municipios de la provincia de Burgos teniendo en cuenta la limitación de reseñas según el plan de pago de Apify.
-
-El primer script a ejecutar es OverpassExtraction.py, que se encarga de extraer los nodos, vías y relaciones de los municipios de la provincia de Burgos. 
-Este script utiliza la API de Overpass para obtener los límites de los municipios y guardarlos en un fichero JSON.
-Este script funciona a través de una consulta en Overpass QL. Ya que no todos los nodos de que ofrece OpenStreetMaps (OSM) son puntos de interés en Google Maps y por lo tanto no tienen reseñas, se eliminan en la consulta para reducir el tamaño del fichero JSON.
-Algunos de los nodos que se eliminan son papeleras, bancos, plazas de parking individuales, etc.
-El parámetro admin\_level se utiliza para determinar el nivel de administración del área de la consulta. Se establece en 6 ya que es el nivel provincial lo que permite buscar dentro de los límites de la provincia de Burgos.
-
-El segundo script a ejecutar es PlaceIdExtraction.py que se encarga de extraer los placeIds de los puntos de interés (POIs) obtenidos en el fichero JSON generado por el primer script.
-Este script utiliza la API de Google Places para obtener los placeIds de los POIs y guardarlos en un fichero CSV.
-Para ello se utiliza la función nearbySearch de la API de Google Places que permite buscar lugares cercanos a unas coordenadas dadas. Estas coordenadas se encuentran en el fichero JSON generado anteriormente por lo que basta 
-con recorrer el fichero y realizar una búsqueda para cada uno de los POIs.
-
-El tercer script a ejecutar es ApifyReviewExtraction.py que se encarga de extraer las reseñas de los POIs obtenidos en el fichero CSV generado por el segundo script.
-Este script utiliza la API de Apify para extraer las reseñas de los POIs y guardarlas en un fichero CSV.
-Para ello se utiliza el Google Maps Reviews Scraper de Apify que permite extraer las reseñas utilizando los placeIds obtenidos anteriormente.
-Este scraper devuelve una gran cantidad de campos de información, en mi caso he decidido filtrar solo los más relevantes para el proyecto como pueden ser la valoración o el nombre del punto de interés.
-También permite determinar el número de reseñas a extraer por cada placeId. En caso de querer extraer todas hay que escribir 99999.
-
 \section{Clasificación de los datos}
 
 Con el objetivo de crear un conjunto de datos para entrenar la red neuronal, se han extraído reseñas de puntos de interés con categorías similares 
@@ -175,7 +154,18 @@ Estos calculos se realizan de forma automática en Power BI a través	de medidas
 
 Además de esto, se han creado visualizaciones para ver la distribución por categorías, fechas y género del usuario de las reseñas obtenidas así como un mapa y una ontología para los tipos de recursos.
 
+\newpage
+
 \section{Publicación del cuadro de mando}
 
 Finalmente, se ha publicado el cuadro de mando en Power BI para que pueda ser consultado por cualquier persona interesada en el análisis de las reseñas obtenidas.
 Se ha utilizado PowerPages para crear una página web que permite acceder al cuadro de mando de forma sencilla y rápida.
+
+\imagen{dashboard}{Cuadro de mando creado}{1}
+
+\section{Flujo de trabajo}
+
+Se muestra a continuación el flujo de trabajo del proyecto en forma de diagrama junto a
+las herramientas utilizadas en cada fase del proyecto.
+
+\imagen{flujo}{Flujo de trabajo}{1}

@@ -36,13 +36,20 @@ Respecto a las reseñas, el NLP permite analizar el texto de las reseñas para e
 Para llevar a cabo el procesamiento de lenguaje natural, se utilizan diferentes técnicas y herramientas que permiten analizar y comprender el texto.
 Las redes neuronales son una de las herramientas más utilizadas en el procesamiento de lenguaje natural, ya que permiten aprender patrones y relaciones complejas en los datos.
 
-\section{Redes Neuronales}
+\section{Perceptrón multicapa (MLP)}
 
 Una red neuronal es un modelo de aprendizaje automático inspirado en el funcionamiento del cerebro. \cite{google:nn}
-Las redes neuronales están formadas por varias capas. Entre estas se encuentra la capa de entrada, las capas ocultas y finalmente, la capa de salida.
-Cada capa está formada por un número determinado de neuronas y cada neurona recibe señales de las neuronas de la capa anterior, las procesa y las transmite a las neuronas de la capa siguiente.
+El perceptrón multicapa (MLP) es un tipo de red neuronal feedforward formado por varias capas.
+Se encuentra dentro del grupo de las redes neuronales artificiales (ANN).
+Se compone de una capa de entrada, varias ocultas y una de salida.
 
-\imagen{red_neuronal}{Arquitectura de una red neuronal}{1}
+\imagen{mlp}{Diagrama del perceptrón multicapa}{1}
+
+Cada capa está formada por varias neuronas con unos pesos ponderados.
+A través de las funciones de activación, se realiza una combinación lineal de las entradas y los pesos para obtener la salida de cada neurona.
+El entrenamiento de la red neuronal sirve para ir modificando y ajustando los valores de los pesos para que la salida de la red neuronal converja con la esperada.
+
+\imagen{neurona}{Diagrama de una neurona}{1}
 
 \subsection{Representación de datos}
 
@@ -64,20 +71,7 @@ Para que el modelo pueda trabajar con las cadenas obtenidas tras las tokenizaci�
 Para ello se realiza un proceso de vectorización en el que se asigna un número a cada token, creando así un vocabulario.
 Este vocabulario es un diccionario que asocia cada token con un número único.
 Una vez se tiene el vocabulario, se puede representar cada token como un vector numérico.
-
-Nuevamente existen diferentes formas de vectorizar\cite{medium:vectorization} un texto:
-
-\begin{itemize}
-	\item \textbf{One Hot Encoding:} Este método asigna un vector formado por un numero n de números donde n es el número de tokens únicos en el vocabulario.
-	Recibe su nombre de su representación que consiste en un vector de ceros y un único uno en la posición del token. De esa forma para representar el token 'Cómo' en el ejemplo anterior de 4 tokens, el vector sería [0, 1, 0, 0].
-	\item \textbf{Bag of Words:} En este caso se ignora el orden de los tokens y la gramática y se representa la frecuencia de cada token en el texto.
-	Al contar la frecuencia de cada token se puede llegar a la conclusión de cuales son los tokens más relevantes en el texto.
-	\item \textbf{Term Frequency-Inverse Document Frequency (TF-IDF):} Se trata de una técnica con el objetivo de capturar el significado del texto. 
-	Para lograrlo se basa en dos ideas, la frecuencia de los términos (TF) que mide cuantas veces aparece un token en el texto respecto del total de palabras y se calcula dividiendo la frecuencia del token entre el número total de palabras y la frecuencia inversa de documento (IDF) que mide la importancia de un token respecto a todo el texto.
-	Se calcula como el logaritmo del número total de documentos dividido entre el número de documentos que contienen el token.
-	Sin embargo, no aprecia la semántica de las palabras por lo que no puede capturar la similitud entre palabras sinónimas entre otros casos.
-	\item \textbf{BERT Embeddings:} Este método crea una representación vectorial basandose en el contexto en el que aparece cada token en el texto. Para ello, utiliza un modelo preentrenado de BERT (Bidirectional Encoder Representations from Transformers).
-\end{itemize}
+En mi caso, he utilizado BERT Embeddings. Este método crea una representación vectorial basandose en el contexto en el que aparece cada token en el texto. Para ello, utiliza un modelo preentrenado de BERT (Bidirectional Encoder Representations from Transformers).
 
 \subsection{Codificación y preprocesado de datos}
 
@@ -99,16 +93,13 @@ El sobreentrenamiento ocurre cuando el modelo se ajusta demasiado a los datos de
 \subsubsection{Regularización}
 
 La regularización es una técnica utilizada para evitar el sobreentrenamiento y mejorar la generalización de las redes neuronales.
-Existen varias técnicas de regularización\cite{medium:regularizacion}, las más comunes son:
+Existen varias técnicas de regularización\cite{medium:regularizacion}, pero las utilizadas en el proyecto son:
 \begin{itemize}
 	\item \textbf{Dropout:} Esta técnica consiste en desactivar aleatoriamente un porcentaje de neuronas durante el entrenamiento. Esto evita que el las neuronas memoricen las entradas. El porcentaje se define directamente en el modelo.
 	\item \textbf{Early Stopping:} Esta técnica consiste en detener el entrenamiento cuando la métrica de validación deja de mejorar. En ese caso se guarda el modelo del epoch o ciclo anterior. Para ello, se monitoriza el rendimiento en cada epoch del modelo. Se suele implementar mediante una función llamada callback que es la que se encarga de la monitorización y de detener el entrenamiento cuando sea necesario y conveniente.
-	\item \textbf{Regularización L1 y L2:} Estas técnicas añaden una penalización a la función loss del modelo.
-	\item \textbf{Batch Normalization:} La normalización por lotes añade un paso entre las neuronas y la función de activación para estabilizar el entrenamiento.
-	\item \textbf{Data Augmentation:} Esta técnica consiste en aumentar el conjunto de datos de entrenamiento mediante la creación de nuevas muestras a partir de las existentes. Por ejemplo, en el caso de imágenes, se pueden aplicar transformaciones como rotación, escalado o cambio de brillo o en textos se puede traducir a otro idioma y revertirlo o cambiar palabras por sinónimas.
+	\item \textbf{Data Augmentation:} Esta técnica consiste en aumentar el conjunto de datos de entrenamiento mediante la creación de nuevas muestras a partir de las existentes. Por ejemplo, en el caso del proyecto, se puede cambiar palabras por sinónimas.
 \end{itemize}
-
-Es común combinar varias de estas técnicas para mejorar el rendimiento del modelo. 
+. 
 También es importante tener en cuenta que la regularización puede aumentar el tiempo de entrenamiento del modelo, ya que se añaden pasos adicionales al proceso de entrenamiento.
 
 \subsection{Métricas de evaluación}
@@ -169,33 +160,9 @@ Es una métrica que mide como de incorrectas son las predicciones del modelo res
 Al entrenar un modelo se trata de minimizar esta métrica lo más posible. 
 De la misma forma que la accuracy, si el valor de la loss es muy bajo en el conjunto de entrenamiento pero alto en el conjunto de validación, es probable que el modelo esté sobreentrenado.
 
-En problemas de regresión una de las métricas más comunes es el error cuadrático medio (MSE) como métrica de pérdida. Este representa la media de los cuadrados de las diferencias entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
-	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\end{equation}
-Otra de las métricas más comunes en regresión es el error absoluto medio (MAE) que se calcula como la media de las diferencias absolutas entre las predicciones y los valores reales. Su fórmula es: \begin{equation}
-	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-\end{equation}
-
-En clasificación, la métrica de pérdida más común es la entropía cruzada (cross-entropy loss) que mide la diferencia entre las distribuciones de probabilidad de las predicciones y los valores reales. Su fórmula es: \begin{equation}
-	\text{Cross-Entropy Loss} = -\sum_{i=1}^{n} y_i \log(\hat{y}_i)
-\end{equation}
-Esta métrica es especialmente útil en problemas de clasificación multiclase, ya que penaliza más las predicciones incorrectas que las correctas.
-
 Los optimizadores son algoritmos que se utilizan para minimizar la función de pérdida del modelo durante el entrenamiento.
-Existen varios tipos de optimizadores, los más comunes son:
-\begin{itemize}
-	\item \textbf{SGD (Stochastic Gradient Descent):} Es el optimizador más básico y consiste en actualizar los pesos del modelo en función del gradiente de la función de pérdida respecto a los pesos.
-	\item \textbf{RMSprop (Root Mean Square prop):} Es un optimizador que utiliza una media móvil del cuadrado del gradiente y normaliza el valor para adaptar el aprendizaje.
-	\item \textbf{Adagrad (ADAptative GRADient algorithm):} Introduce el aprendizaje adaptativo, lo que significa que el aprendizaje se adapta a cada parámetro del modelo en función de su frecuencia de actualización.
-	\item \textbf{Adam (Adaptive Moment Estimation):} Es una mezcla entre RMSprop y Adagrad. Utiliza una media móvil exponencial del gradiente para ajustar las tasas de aprendizaje.
-\end{itemize}
+Existen varios tipos de optimizadores, pero el utilizado en el proyecto es Adam (Adaptive Moment Estimation), que utiliza una media móvil exponencial del gradiente para ajustar las tasas de aprendizaje.
 
-\subsubsection{Curva ROC y AUC}
-
-La curva ROC\cite{google:roc_auc} (Receiver Operating Characteristic) es una representación gráfica que representa la tasa de falsos positivos frente al Recall.
-
-El área bajo la curva (AUC) es una métrica que representa la probabilidad de que dados un ejemplo positivo y uno negativo de forma completamente aleatoria, el modelo prediga correctamente el ejemplo positivo con una probabilidad mayor que la del ejemplo negativo.
- 
 \subsubsection{Matriz de confusión}
 
 La matriz de confusión es una tabla que muestra el número de verdaderos positivos, verdaderos negativos, falsos positivos y falsos negativos.
@@ -225,49 +192,22 @@ Los cálculos para obtener las métricas anteriores para la clase A serían:
 Las funciones de activación son las encargadas de transformar la señal recibida en la de salida que se transmite a la siguiente capa.
 Estas funciones son fundamentales para que la red neuronal pueda aprender y generalizar patrones en los datos.
 Las funciones de activación introducen no linealidades en el modelo, lo que permite a la red aprender relaciones complejas entre las entradas y las salidas.
-Existen varias funciones de activación\cite{funciones-activacion}, las más comunes son:
-\begin{itemize}
-	\item \textbf{Lineal:} Esta función transforma la señal de entrada en la misma señal de salida. Es útil para problemas de regresión. Su fórmula es: \begin{equation}
-	\text{f(x)} = x
-	\end{equation} 
-	\item \textbf{Sigmoide:} Esta función transforma la señal de entrada en un valor entre 0 y 1. Es útil para problemas de clasificación binaria. Su fórmula es: \begin{equation}
-	\text{f(x)} = \frac{1}{1 + e^{-x}}
-	\end{equation}
-	\item \textbf{ReLU (Rectified Linear Unit):} Esta función transforma la señal de entrada en un valor positivo o cero. Es útil para problemas de regresión y clasificación multiclase. Su fórmula es: \begin{equation}
-	\text{f(x)} = \max(0, x)
-	\end{equation}
-	\item \textbf{Softmax:} Esta función transforma la señal de entrada en una distribución de probabilidad sobre las clases. Es útil para problemas de clasificación multiclase. Su fórmula es: \begin{equation}
+Existen varias funciones de activación\cite{funciones-activacion}, pero en este proyecto se utiliza Softmax.
+Softmax es una función transforma la señal de entrada en una distribución de probabilidad sobre las clases. Es útil para problemas de clasificación multiclase. Su fórmula es: 
+\begin{equation}
 	\text{f(x)} = \frac{e^{x_i}}{\sum_{j=1}^{K} e^{x_j}}
-	\end{equation}
-\end{itemize}
+\end{equation}
 
 \subsection{Aprendizaje}
 
 Existen varios tipos de aprendizaje: supervisado, no supervisado y por refuerzo.
+Para este apartado me centraré en el supervisado que es el utilizado.
 
 El aprendizaje supervisado es el que cuenta con un conjunto de datos etiquetados, es decir, un conjunto de datos en el que cada entrada tiene una etiqueta o clase asociada.
 El modelo aprende a partir de estos datos y se ajusta para predecir las etiquetas de nuevas entradas.
 Existen dos tipos de aprendizaje supervisado, la clasificación y la regresión.
 La clasificación es el proceso de asignar una etiqueta o clase a una entrada, mientras que la regresión es el proceso de predecir un valor numérico continuo a partir de una entrada.
-Un ejemplo de clasificación sería predecir si una reseña es positiva o negativa o determinar de que tipo de establecimiento es, mientras que un ejemplo de regresión sería predecir la puntuación de una reseña.
-
-El aprendizaje no supervisado es el que no cuenta con un conjunto de datos etiquetados. 
-Por lo tanto, solo se puede describir la estructura de los datos intentando encontrar un patrón común. Su carácter es exploratorio.
-Se suele usar en problemas de agrupamiento (clustering) donde se busca agrupar los datos en función de su similitud.
-
-Por último, el aprendizaje por refuerzo trata de mejorar el rendimiento del modelo a través de un proceso de retroalimentación.
-Su entrada o input es la retroalimentación que obtiene del entorno y su salida o output es la acción que toma el modelo de forma que aprende a base de prueba y error. \cite{aprendizajes}
-
-\subsection{Clasificación}
-
-Al igual que existen diferentes tipos de aprendizaje, existen diferentes tipos de redes neuronales.
-
-\begin{itemize}
-	\item \textbf{Redes Neuronales Convolucionales (CNN):} Son especialmente útiles para el procesamiento de imágenes y datos espaciales debido a que tienen filtros para detectar patrones como bordes o formas. Algunos de sus usos mas comunes son sistemas de vigilancia o radiografías y resonancias.
-	\item \textbf{Redes Neuronales Recurrentes (RNN):} Procesan secuencias teniendo en cuenta el orden haciendo que cada salida dependa de las entradas anteriores. Son útiles para el procesamiento de secuencias de datos, como el texto o el audio.\cite{ibm:rnn}
-	\item \textbf{Redes Neuronales Generativas Adversarias (GAN):} Son un tipo de red neuronal que funciona a partir de dos redes, una generadora y otra evaluadora. Se usan en generación de imágenes realistas o reconstrucción de rostros entre otras cosas.
-	\item \textbf{Redes Neuronales Profundas (DNN):} Cuentan con varias capas ocultas y tratan de aprender patrones muy complejos. Son comunes en diagnósticos médicos complejos o predicción de fraudes financieros.
-\end{itemize}
+Un ejemplo de clasificación sería predecir si una reseña es positiva o negativa o determinar de que tipo de establecimiento es, mientras que un ejemplo de regresión sería predecir la puntuación de una reseña.\cite{aprendizajes}
 
 \subsubsection{BERT(Bidirectional Encoder Representations from Transformers)}
 
@@ -290,28 +230,7 @@ Para entrenar una red neuronal, hay que definir varios parámetroos previamente 
 
 También es importante definir las funciones de activación y pérdida así como el optimizador, el callback o los conjuntos de validación y entrenamiento.
 
-\section{Formatos de almacenamiento y manejo de datos}
-
-Existen varios formatos de almacenamiento y manejo de datos, los más comunes son CSV y JSON. 
-De la misma forma, existen varias bibliotecas para manejar estos formatos y gestores de bases de datos que permiten almacenar y manejar grandes volúmenes de datos de forma escalable.
-
-\subsection{Formatos de almacenamiento}
-
-\subsubsection{CSV}
-
-El formato CSV (Comma-Separated Values) es un formato de texto plano que se utiliza para almacenar datos tabulares.
-Cada línea del archivo representa una fila de la tabla y cada valor está separado por comas.
-Es un formato muy sencillo y fácil de leer, pero no es adecuado para almacenar datos jerárquicos o complejos.
-
-\subsubsection{JSON}
-El formato JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de leer.
-Se utiliza para almacenar datos estructurados y es muy común en aplicaciones web y APIs.
-
-\subsubsection{SQL}
-SQL (Structured Query Language) es un lenguaje de programación utilizado para gestionar bases de datos relacionales.
-Permite realizar operaciones de creación, lectura, actualización y eliminación de datos (CRUD) en bases de datos.
-
-\subsection{Manejo de datos}
+\section{Manejo de datos}
 
 \subsubsection{Azure SQL Database}
 
